@@ -5,7 +5,6 @@ if (isset($_POST['simpan'])) {
 	$nama = $_POST['nama'];
 	$waktu = $_POST['waktu'];
 
-
 }
 
 $save = "INSERT INTO tb_absen SET id_karyawan='$id_karyawan', nama='$nama', waktu='$waktu'";
