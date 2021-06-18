@@ -65,17 +65,30 @@ error_reporting(0);
 <form action="proedit_admin.php" method="POST" >
   <div class="form-group">
     <label >password</label>
-    <input type="password" class="form-control" name="password" >
+    <input type="password" class="form-control" name="password"  id="txtPassword">
     <br>
             <label>Konfirmasi Password Baru</label>
-            <input type="password" id="confPassword" class="form-control"  >
+            <input type="password" id="txtConfirmPassword" class="form-control"  >
         
   </div>
 
-  <button type="submit" class="btn btn-primary"  name="berubah">Save New Password</button>
+  <button type="submit" id="btnSubmit"  class="btn btn-primary"  name="berubah">Save New Password</button>
   <button type="submit" class="btn btn-warning"  name="">Cancel</button>
 </form>
-
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btnSubmit").click(function () {
+                var password = $("#txtPassword").val();
+                var confirmPassword = $("#txtConfirmPassword").val();
+                if (password != confirmPassword) {
+                    alert("Passwords do not match.");
+                    return false;
+                }
+                return true;
+            });
+        });
+    </script>
 </body>
 </html>
 

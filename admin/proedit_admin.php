@@ -11,7 +11,7 @@ include '../koneksi.php';
 if (isset($_POST['ubahdata'])) {
   $id = $_POST['id'];
   $username = $_POST['username'];
-  $password = md5($_POST['password']);
+
 
 
       // Proses ubah data ke Database
@@ -36,7 +36,6 @@ if (isset($_POST['ubahdata'])) {
 //proses  direct page password
 if(isset($_POST['ubahpassword'])){
   $id = $_POST['id'];
-  $password = md5($_POST['password']);
   echo "<script> var yakin =confirm('yakin ingin Mengubah Password ??');
     if(yakin){
       window.location = 'password_edit.php?id=$id';
@@ -49,6 +48,7 @@ if(isset($_POST['ubahpassword'])){
 
 if(isset($_POST['berubah'])){
   $id = $_POST['id'];
+  $username = $_POST['username'];
   $password = md5($_POST['password']);
 
   
