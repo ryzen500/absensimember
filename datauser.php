@@ -316,7 +316,7 @@ error_reporting(0);
 
                                                 </td>
                                                 <td> <a href="admin/admin_hapus.php?id=<?php echo $row['id']; ?>"><button class="btn btn-danger" onclick="return confirm('yakin ingin dihapus?');">Hapus</button></a></td>
-
+                                                <td> <a href="admin/admin_edit.php?id=<?php echo $row['id']; ?>">Edit</button></a></td>
 
                                                 
                                             </tr>
