@@ -1,14 +1,14 @@
 <?php 
-require_once("../koneksi.php");
+// require_once("../koneksi.php");
 error_reporting(0);
-session_start();
+// session_start();
  ?>
  
 <?php 
 	include '../koneksi.php';
 	$id = $_GET['id'];
 	$data = mysqli_query($koneksi, "SELECT * FROM tb_daftar WHERE id = '$id'");
-    while ($d = mysqli_fetch_array($data)) {
+  //   while ($d = mysqli_fetch_array($data)) {
       
     
  ?>
@@ -16,8 +16,8 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Idiot-->
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <!-- Idiot-->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -59,23 +59,24 @@ session_start();
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- end script-->
 
-    <title>Ubah Password</title>
+    <title>Ubah Data</title>
 </head>
 <body>
-<form action="proedit_admin.php" method="POST" enctype="multipart/form-data">
-
-<div class="form-group">
-            <label>Password Baru </label>
-            <input type="password" value="<?= set_value('password') ?>" name="password" class="form-control">
-        </div>
-        <div class="form-group">
+<form action="proedit_admin.php" method="POST" >
+  <div class="form-group">
+    <label >password</label>
+    <input type="password" class="form-control" name="password" >
+    <br>
             <label>Konfirmasi Password Baru</label>
-            <input type="password"  name="confpassword" class="form-control"  >
-        </div>
+            <input type="password" id="confPassword" class="form-control"  >
+        
+  </div>
 
-  <button type="submit" class="btn btn-primary" name="ubahdata">Ubah Password</button>
+  <button type="submit" class="btn btn-primary"  name="berubah">Save New Password</button>
+  <button type="submit" class="btn btn-warning"  name="">Cancel</button>
 </form>
+
 </body>
 </html>
 
-<?php } ?>
+<!-- <?php //} ?> -->

@@ -75,12 +75,13 @@ session_start();
 
   <div class="form-group">
     <label >password</label>
-    <input type="password" class="form-control" readonly="" name="password" autocomplete="off" value="<?php echo $d['username'];?>">
+    <input type="password" class="form-control" readonly="" name="password" autocomplete="off" value="<?php echo $d['password'];?>">
   </div>
 
   <button type="submit" class="btn btn-primary"  name="ubahdata">Ubah Data</button>
-  <a href="password_edit.php">Ubah password</a>
+  <button type="submit" class="btn btn-warning"  name="ubahpassword">Ubah password</button>
 </form>
+
 </body>
 </html>
 
