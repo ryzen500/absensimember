@@ -1,14 +1,14 @@
 <?php 
-// require_once("../koneksi.php");
+require_once("../koneksi.php");
 error_reporting(0);
-// session_start();
+session_start();
  ?>
  
 <?php 
 	include '../koneksi.php';
 	$id = $_GET['id'];
 	$data = mysqli_query($koneksi, "SELECT * FROM tb_daftar WHERE id = '$id'");
-  //   while ($d = mysqli_fetch_array($data)) {
+    while ($d = mysqli_fetch_array($data)) {
       
     
  ?>
@@ -92,4 +92,4 @@ error_reporting(0);
 </body>
 </html>
 
-<!-- <?php //} ?> -->
+<!-- <?php } ?> -->
