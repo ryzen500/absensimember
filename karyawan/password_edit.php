@@ -7,7 +7,7 @@ session_start();
 <?php 
 	include '../koneksi.php';
 	$id = $_GET['id'];
-	$data = mysqli_query($koneksi, "SELECT * FROM tb_daftar WHERE id = '$id'");
+	$data = mysqli_query($koneksi, "SELECT * FROM tb_karyawan WHERE id = '$id'");
     while ($d = mysqli_fetch_array($data)) {
       
     
@@ -62,11 +62,12 @@ session_start();
     <title>Ubah Data</title>
 </head>
 <body>
-<form action="proedit_admin.php" method="POST" >
-<div class="form-group">
-    <label>Id</label>
-    <input type="number" class="form-control" readonly="" name="id" autocomplete="off" value="<?php echo $d['id'];?>">
+<form action="proedit_karyawan.php" method="POST" >
+  <div class="form-group">
+    <label>NIP</label>
+    <input type="number" class="form-control" readonly="" name="id_karyawan" autocomplete="off" value="<?php echo $d['id_karyawan'];?>">
   </div>
+  
   <div class="form-group">
     <label >password</label>
     <input type="password" class="form-control" name="password"  id="txtPassword">
@@ -77,7 +78,7 @@ session_start();
   </div>
 
   <button type="submit" id="btnSubmit"  class="btn btn-primary"  name="berubah">Save New Password</button>
-  <a href="../datauser.php"><button class="btn btn-warning">Cancel</button></a>
+  <a href="../datakaryawan.php"><button class="btn btn-warning">Cancel</button></a>
 </form>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript">

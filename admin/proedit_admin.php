@@ -36,12 +36,12 @@ if (isset($_POST['ubahdata'])) {
 //proses  direct page password
 if(isset($_POST['ubahpassword'])){
   $id = $_POST['id'];
-  var_dump($id);
+  // var_dump($id);
   echo "<script> var yakin =confirm('yakin ingin Mengubah Password ??');
     if(yakin){
       window.location = 'password_edit.php?id=$id';
     }else {
-    document.write('Tetap disini saja ya  !!');
+    document.location = 'admin_edit.php?id=$id';
     }
   
   </script>";
@@ -57,10 +57,10 @@ if(isset($_POST['berubah'])){
 //  var_dump($id); 
       // Proses ubah data ke Database
       //Querynya 
-      $sql_f = "UPDATE tb_daftar set password='$password' WHERE id=2";
+      $sql_f = "UPDATE tb_daftar set password='$password' WHERE id='$id'";
       $ubah  = mysqli_query($koneksi, $sql_f);
 
-      // var_dump($ubah); 
+      var_dump($ubah); 
       if($ubah){
         echo "<script>alert('Ubah Data Dengan ID User = ".$id." Berhasil') </script>";
         echo "<script>window.location.href = '../datauser.php' </script>";

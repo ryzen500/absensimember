@@ -297,8 +297,8 @@ error_reporting(0);
                                                     
 
                                                 </td>
-                                                <td> <a href="hapus_jabatan.php?id=<?php echo $row['id']; ?>"><button class="btn btn-danger" onclick="return confirm('yakin ingin dihapus?');">Hapus</button></a></td>
-                                                <td> <a href="jabatan_edit.php?id=<?php echo $row['id']; ?>"><button >Edit</button></a></td>
+                                                <td> <a href="jabatan_edit.php?id=<?php echo $row['id']; ?>"><button class="btn btn-primary">Edit</button></a> <a href="hapus_jabatan.php?id=<?php echo $row['id']; ?>"><button class="btn btn-danger" onclick="return confirm('yakin ingin dihapus?');">Hapus</button></a></td>
+
 
                                                 
                                             </tr>
