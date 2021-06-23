@@ -1,13 +1,13 @@
 <?php 
 require_once("../koneksi.php");
-error_reporting(0);
+// error_reporting(0);
 session_start();
  ?>
  
 <?php 
 	include '../koneksi.php';
-	$id = $_GET['id'];
-	$data = mysqli_query($koneksi, "SELECT * FROM tb_karyawan WHERE id = '$id'");
+	$id_karyawan = $_GET['id_karyawan'];
+	$data = mysqli_query($koneksi, "SELECT * FROM tb_karyawan WHERE id_karyawan = '$id_karyawan'");
     while ($d = mysqli_fetch_array($data)) {
       
     

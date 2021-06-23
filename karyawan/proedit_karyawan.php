@@ -67,6 +67,7 @@ if (isset($_POST['ubahdata'])) {
      }
    }
  } //akhir untuk mengubah data
+}
 
  //proses  direct page password
 if(isset($_POST['ubahpassword'])){
@@ -87,7 +88,7 @@ if(isset($_POST['berubah'])){
   // error_reporting(0);
   $id_karyawan = $_POST['id_karyawan'];
   // $username = $_POST['username'];
-  $password = $_POST['password'];
+  $password = md5($_POST['password']);
 
 //  var_dump($id); 
       // Proses ubah data ke Database
@@ -108,7 +109,7 @@ if(isset($_POST['berubah'])){
           echo "<br><a href=\"edit_karyawan.php?id=".$row['id_karyawan']."\"> Kembali Ke From ! </a>";
         }
       }
-    }
+    
 }
 
 ?>

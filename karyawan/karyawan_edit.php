@@ -147,7 +147,7 @@ session_start();
     <label>Foto</label><br>
   <?php 
             if ($d['foto']!=''){
-                          echo "<img src=\"images/$d[foto]\" height=150 />";  
+                          echo "<img src=\"../images/$d[foto]\" height=150 />";  
                         }
                         else{
                           echo "tidak ada gambar";
