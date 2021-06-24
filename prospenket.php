@@ -67,8 +67,8 @@ session_start();
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="admin2.php">
-                            <h1>admin</h1>
+                        <a class="logo" href="#">
+                           
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -80,7 +80,7 @@ session_start();
             </div>
             <nav class="navbar-mobile">
                 <div class="container-fluid">
-                    <ul class="navbar-mobile__list list-unstyled">
+                     <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
                             <a class="js-arrow" href="admin2.php">
                                 <i class="fas fa-tachometer-alt"></i>Beranda</a>
@@ -121,13 +121,13 @@ session_start();
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                  <h1>admin</h1>
+                    <h1>admin</h1>
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                        <li>
+                        <li class="active has-sub">
                             <a class="js-arrow" href="admin2.php">
                                 <i class="fas fa-tachometer-alt"></i>Beranda</a>
                           
@@ -148,8 +148,10 @@ session_start();
                             <a href="data_absen.php">
                                 <i class="fas fa-calendar-alt"></i>Data Absen</a>
                         </li>
-                        <li class="active has-sub">
-                            <a href="data_keterangan.php"><i class="fas fa-table"></i>Data Keterangan</a>
+                        <li>
+                            <a href="data_keterangan.php">
+                                <i class="fas fa-table"></i>data Keterangan
+                            </a>
                         </li>
                         <!--<li>
                             <a href="map.html">
@@ -225,16 +227,17 @@ session_start();
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="header-wrap">
-                           
-                             <form class="form-header" action="prospenket.php" method="POST">
-                                <input class="au-input au-input--xl" autocomplete="off" type="text" name="cari" placeholder="Cari ID atau nama karyawan" />
+                            <form class="form-header" action="prospenket.php" method="POST">
+                                <input autocomplete="off" class="au-input au-input--xl" type="text" name="cari" placeholder="Cari ID atau nama karyawan" />
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
                                 </button>
                             </form>
                             <div class="header-button">
-                                
-                            </div>
+                                <div class="noti-wrap">
+                                    <div class="noti__item js-item-menu">
+                                     
+                                   
                         </div>
                     </div>
                 </div>
@@ -246,61 +249,74 @@ session_start();
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
-                        
+                       
+
                         <div class="row">
 
                                 <div class="table-responsive table--no-card m-b-30">
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
                                             <tr>
-                                <th>no</th>   
-                                 <th>id karyawan</th>
-                                 <th>Nama</th>
-                                 <th>keterangan</th>
-                                 <th class="text-right">alasan</th>
-                                 <th class="text-right">waktu</th>
-                                 <th>bukti</th>
-                               
-                                <th>Aksi</th>
+                                                <th>No</th>
+                                                <th>Id Karyawan</th>
+                                                <th>Nama</th>
+                                                <th>Keterangan</th>
+                                                <th class="text-right">alasan</th>
+                                                <th class="text-right">waktu</th>
+                                                <th>Bukti</th>
+                                                <th>Aksi</th>
                                                 
                                             </tr>
                                         </thead>
-                                        <?php 
-                                            
+
+                                           
+                                        <tbody>
+                                            <?php 
+                                            $cari = $_POST['cari'];
+                                            $sql = "SELECT * FROM tb_keterangan WHERE id_karyawan LIKE '%$cari%' OR nama LIKE '%$cari%'";
+                                            $query = mysqli_query($koneksi, $sql);
 
                                             $no = 1;
-                                          
-                                                
+
+                                            while ($row = mysqli_fetch_array($query)) {
+                                                # code...
                                             
-                                         ?>
-                                        <tbody>
-                                           
+                                             ?>
+                                            <tr>
+                                                <td><?php echo $row['id']; ?></td>
+                                                <td><?php echo $row['id_karyawan']; ?></td>
+                                                <td><?php echo $row['nama']; ?></td>
+                                                <td><?php echo $row['keterangan']; ?></td>
+                                                <td><?php echo $row['alasan']; ?></td>
+                                                <td><?php echo $row['waktu']; ?></td>
+                                                <td>
+                                                <?php 
+
+                                                   if ($row['bukti']!='') {
+                                                    echo "<img src=\" karyawan/modul/karyawan/images/$row[bukti]\" />";
+                                                   }else{
+                                                    echo "images";
+                                                   }
+
+                                                ?>
+                                                    
+
+                                                </td>
+                                                <td><a href="absen/hapus_keterangan.php?id=<?php echo $row['id']; ?>"><button class="btn btn-danger" onclick="return confirm('yakin ingin dihapus?');">Hapus</button></a></td>
+
+
+                                                
+                                            </tr>
                                            <?php 
                                            $no++;
-                                            include 'paging_ket.php';
+                                       }
 
                                             ?>
                                         </tbody>
                                     </table>
-                                    
                                 </div>
                             </div>
-                            <ul class="pagination justify-content-center">
-                <li class="page-item">
-                    <a class="page-link" <?php if($halaman > 1){ echo "href='?halaman=$Previous'"; } ?>>Previous</a>
-                </li>
-                <?php 
-                for($x=1;$x<=$total_halaman;$x++){
-                    ?> 
-                    <li class="page-item"><a class="page-link" href="?halaman=<?php echo $x ?>"><?php echo $x; ?></a></li>
-                    <?php
-                }
-                ?>              
-                <li class="page-item">
-                    <a  class="page-link" <?php if($halaman < $total_halaman) { echo "href='?halaman=$next'"; } ?>>Next</a>
-                </li>
-            </ul>
-        
+                          
             <!-- Modal -->
 
             <!-- End Modal -->

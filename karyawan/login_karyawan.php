@@ -29,6 +29,7 @@
             <div class="clear"> </div>
           </div>
           <input type="submit" value="Login">
+          <a href=daftar_karyawan.php><button class="btn btn-primary">Register</button></a>
         </form>
         
       </div>

@@ -30,7 +30,7 @@ session_start();
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Data Karyawan</title>
+    <title>Data Jabatan</title>
 
     <!-- Fontfaces CSS-->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="all">
