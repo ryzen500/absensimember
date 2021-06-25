@@ -95,7 +95,7 @@ session_start();
                                                 <td>Password</td>
                                                 <td>
                                                 
-                                                <input type="text" class="form-control" required="" name="password" autocomplete="off">    
+                                                <input type="password" class="form-control" required="" name="password" autocomplete="off">    
                                                 
                                             </td>
                                             </tr>
