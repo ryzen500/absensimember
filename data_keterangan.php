@@ -232,7 +232,7 @@ session_start();
                         <div class="header-wrap">
                            
                              <form class="form-header" action="prospenket.php" method="POST">
-                                <input class="au-input au-input--xl" autocomplete="off" type="text" name="cari" placeholder="Cari ID atau nama karyawan" />
+                                <input class="au-input au-input--xl" autocomplete="off" type="text" name="cari" placeholder="Cari ID atau nama karyawan" value="<?php if(isset($_POST['cari'])) echo $_POST['cari'];?>" />
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
                                 </button>

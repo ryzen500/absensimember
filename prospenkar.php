@@ -228,7 +228,7 @@ session_start();
                     <div class="container-fluid">
                         <div class="header-wrap">
                             <form class="form-header" action="prospenkar.php" method="POST">
-                                <input autocomplete="off" class="au-input au-input--xl" type="text" name="cari" placeholder="Cari ID atau nama karyawan" />
+                                <input autocomplete="off" class="au-input au-input--xl" type="text" name="cari" placeholder="Cari ID atau nama karyawan" value="<?php if(isset($_POST['cari'])) echo $_POST['cari'];?>" />
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
                                 </button>
