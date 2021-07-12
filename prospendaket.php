@@ -228,18 +228,18 @@ session_start();
                     <div class="container-fluid">
                         <div class="header-wrap">
                             <form class="form-header" action="prospenket.php" method="POST">
-                                <input autocomplete="off" class="au-input au-input--xl" type="text" name="cari" placeholder="Cari ID atau nama karyawan" />
+                                <input autocomplete="off" class="au-input au-input--xl" type="text" name="cari" placeholder="Cari ID atau nama karyawan"  value="<?php if(isset($_POST['cari'])) echo $_POST['cari'];?>"/>
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
                                 </button>
                             </form>
                             <form class="form-header" action="prospendaket.php" method="POST">
-                                <input class="au-input au-input--xl" autocomplete="off" type="date" name="cari2" placeholder="cari waktu" />
+                                <input class="au-input au-input--xl" autocomplete="off" type="date" name="cari_waktu" placeholder="cari waktu" value="<?php if(isset($_POST['cari_waktu'])) echo $_POST['cari_waktu'];?>"/>
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
                                 </button> </form>
                             <div class="header-button">
-
+</div> 
                                      
                                    
                         </div>
@@ -276,38 +276,13 @@ session_start();
                                            
                                         <tbody>
                                             <?php 
-
-                                            $cari2 = $_POST['cari2'];
-                                            $sql = "SELECT * FROM tb_keterangan WHERE cari_waktu LIKE '%$cari2%'";
+                                            $cari_waktu = $_POST['cari_waktu'];
+                                            $sql = "SELECT * FROM tb_keterangan WHERE cari_waktu LIKE '%$cari_waktu%'";
                                             $query = mysqli_query($koneksi, $sql);
 
                                             $no = 1;
 
-                                            while ($row = mysqli_fetch_array($query)) {
-                                                # code...
-                                            
-
-                                            include("koneksi.php");
-                                            if (isset($_POST['tgl_awal'])&& isset($_POST['tgl_akhir'])) {
-                                    
-                                                $tgl_awal=$_POST["tgl_awal"];
-                                                $tgl_akhir=$_POST["tgl_akhir"];
-                                    
-                                    
-                                                $sql="select * from tb_keterangan where waktu between '".$tgl_awal."' and '".$tgl_akhir."' order by id_karyawan asc";
-                                    
-                                            }else {
-                                                $sql="select * from tb_keterangan order by tmp_tgl_lahir asc";
-                                            }
-                                    
-                                            $hasil=mysqli_query($koneksi,$sql);
-                                            // var_dump($hasil);
-                                            $no=0;
-                                            while ($row =  mysqli_fetch_array($hasil)) {
-                                                
-                                                $no++;
-                                             ?>
-                                             
+                                            while ($row = mysqli_fetch_array($query)) {                                                # code...                                                                                         ?>
                                             <tr>
                                                 <td><?php echo $row['id']; ?></td>
                                                 <td><?php echo $row['id_karyawan']; ?></td>
@@ -334,9 +309,7 @@ session_start();
                                                 
                                             </tr>
                                            <?php 
-                                           $no++;
-                                       }
-                                    }
+                                           $no++;                                       }
 
                                             ?>
                                         </tbody>

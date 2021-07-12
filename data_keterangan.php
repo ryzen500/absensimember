@@ -238,7 +238,7 @@ session_start();
                                 </button> </form>
 
                                 <form class="form-header" action="prospendaket.php" method="POST">
-                                <input class="au-input au-input--xl" autocomplete="off" type="date" name="cari2" placeholder="cari waktu" />
+                                <input class="au-input au-input--xl" autocomplete="off" type="date" name="cari_waktu" placeholder="Cari " value="<?php if(isset($_POST['cari_waktu'])) echo $_POST['cari_waktu'];?>"/>
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
                                 </button> </form>
