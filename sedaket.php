@@ -310,21 +310,24 @@ require_once("koneksi.php");
                                            
                                         <tbody>
                                             <?php 
+                                            include("koneksi.php");
                                             if (isset($_POST['tgl_awal'])&& isset($_POST['tgl_akhir'])) {
                                     
-                                                $tgl_awal=date('Y-m-d', strtotime($_POST["tgl_awal"]));
-                                                $tgl_akhir=date('Y-m-d', strtotime($_POST["tgl_akhir"]));
+                                                $tgl_awal=$_POST["tgl_awal"];
+                                                $tgl_akhir=$_POST["tgl_akhir"];
                                     
                                     
-                                                $sql="select * from tb_keterangan where waktu between '".$tgl_awal."' and '".$tgl_akhir."' order by nim asc";
+                                                $sql="select * from tb_keterangan where waktu between '".$tgl_awal."' and '".$tgl_akhir."' order by id_karyawan asc";
                                     
                                             }else {
-                                                $sql="select * from tb_keterangan order by nim asc";
+                                                $sql="select * from tb_keterangan order by tmp_tgl_lahir asc";
                                             }
                                     
-                                            $hasil=mysqli_query($kon,$sql);
+                                            $hasil=mysqli_query($koneksi,$sql);
+                                            // var_dump($hasil);
                                             $no=0;
-                                            while ($data = mysqli_fetch_array($hasil)) {
+                                            while ($row =  mysqli_fetch_array($hasil)) {
+                                                
                                                 $no++;
                                              ?>
                                              
