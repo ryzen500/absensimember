@@ -1,7 +1,7 @@
 <?php
-// error_reporting(0); 
+error_reporting(0); 
 require_once("koneksi.php");
-// session_start();
+session_start();
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,11 +44,6 @@ require_once("koneksi.php");
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
-
-          <!-- datetime-picker-24 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
-
     <!-- Script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -238,39 +233,11 @@ require_once("koneksi.php");
                                     <i class="zmdi zmdi-search"></i>
                                 </button>
                             </form>
-
-                            <form class="form-header" action="sedaket.php" method="POST">
-
-<div class="form-group">
-    <div class="input-group date">
-        <input id="tgl_mulai" placeholder="masukkan tanggal Awal" type="text" class="form-control datepicker" name="tgl_awal"  value="<?php if (isset($_POST['tgl_awal'])) echo $_POST['tgl_awal'];?>" >
-    </div>
-</div>
-<div class="form-group">
-    <div class="input-group date">
-        <input id="tgl_akhir" placeholder="masukkan tanggal Akhir" type="text" class="form-control datepicker" name="tgl_akhir" value="<?php if (isset($_POST['tgl_akhir'])) echo $_POST['tgl_akhir'];?>">
-    </div>
-</div>
-<script type="text/javascript">
-    $(function(){
-        $(".datepicker").datepicker({
-            format: 'dd-mm-yyyy',
-            autoclose: true,
-            todayHighlight: false,
-        });
-        $("#tgl_mulai").on('changeDate', function(selected) {
-            var startDate = new Date(selected.date.valueOf());
-            $("#tgl_akhir").datepicker('setStartDate', startDate);
-            if($("#tgl_mulai").val() > $("#tgl_akhir").val()){
-                $("#tgl_akhir").val($("#tgl_mulai").val());
-            }
-        });
-    });
-</script>
-<div class="form-group">
-<input type="submit" class="btn btn-info" value="Cari">
-</div>
-</form>
+                            <form class="form-header" action="prospendaket.php" method="POST">
+                                <input class="au-input au-input--xl" autocomplete="off" type="date" name="cari2" placeholder="cari waktu" />
+                                <button class="au-btn--submit" type="submit">
+                                    <i class="zmdi zmdi-search"></i>
+                                </button> </form>
                             <div class="header-button">
                                 <div class="noti-wrap">
                                     <div class="noti__item js-item-menu">
@@ -310,24 +277,16 @@ require_once("koneksi.php");
                                            
                                         <tbody>
                                             <?php 
-                                            if (isset($_POST['tgl_awal'])&& isset($_POST['tgl_akhir'])) {
-                                    
-                                                $tgl_awal=date('Y-m-d', strtotime($_POST["tgl_awal"]));
-                                                $tgl_akhir=date('Y-m-d', strtotime($_POST["tgl_akhir"]));
-                                    
-                                    
-                                                $sql="select * from tb_keterangan where waktu between '".$tgl_awal."' and '".$tgl_akhir."' order by nim asc";
-                                    
-                                            }else {
-                                                $sql="select * from tb_keterangan order by nim asc";
-                                            }
-                                    
-                                            $hasil=mysqli_query($kon,$sql);
-                                            $no=0;
-                                            while ($data = mysqli_fetch_array($hasil)) {
-                                                $no++;
+                                            $cari2 = $_POST['cari2'];
+                                            $sql = "SELECT * FROM tb_keterangan WHERE cari_waktu LIKE '%$cari2%'";
+                                            $query = mysqli_query($koneksi, $sql);
+
+                                            $no = 1;
+
+                                            while ($row = mysqli_fetch_array($query)) {
+                                                # code...
+                                            
                                              ?>
-                                             
                                              
                                             <tr>
                                                 <td><?php echo $row['id']; ?></td>

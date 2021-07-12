@@ -235,40 +235,15 @@ session_start();
                                 <input class="au-input au-input--xl" autocomplete="off" type="text" name="cari" placeholder="Cari ID atau nama karyawan" />
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
-                                </button>
-                            </form>
-                            <form class="form-header" action="sedaket.php" method="POST">
+                                </button> </form>
 
-<div class="form-group">
-    <div class="input-group date">
-        <input id="tgl_mulai" placeholder="masukkan tanggal Awal" type="text" class="form-control datepicker" name="tgl_awal"  value="<?php if (isset($_POST['tgl_awal'])) echo $_POST['tgl_awal'];?>" >
-    </div>
-</div>
-<div class="form-group">
-    <div class="input-group date">
-        <input id="tgl_akhir" placeholder="masukkan tanggal Akhir" type="text" class="form-control datepicker" name="tgl_akhir" value="<?php if (isset($_POST['tgl_akhir'])) echo $_POST['tgl_akhir'];?>">
-    </div>
-</div>
-<script type="text/javascript">
-    $(function(){
-        $(".datepicker").datepicker({
-            format: 'dd-mm-yyyy',
-            autoclose: true,
-            todayHighlight: false,
-        });
-        $("#tgl_mulai").on('changeDate', function(selected) {
-            var startDate = new Date(selected.date.valueOf());
-            $("#tgl_akhir").datepicker('setStartDate', startDate);
-            if($("#tgl_mulai").val() > $("#tgl_akhir").val()){
-                $("#tgl_akhir").val($("#tgl_mulai").val());
-            }
-        });
-    });
-</script>
-<div class="form-group">
-<input type="submit" class="btn btn-info" value="Cari">
-</div>
-</form>
+                                <form class="form-header" action="prospendaket.php" method="POST">
+                                <input class="au-input au-input--xl" autocomplete="off" type="date" name="cari2" placeholder="cari waktu" />
+                                <button class="au-btn--submit" type="submit">
+                                    <i class="zmdi zmdi-search"></i>
+                                </button> </form>
+
+
                             <div class="header-button">
                                 
                             </div>

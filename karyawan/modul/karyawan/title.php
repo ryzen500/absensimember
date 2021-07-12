@@ -234,6 +234,11 @@ error_reporting(0);
                                                 <td><input readonly="" type="text" class="form-control" value="<?php echo date('l, d-m-Y h:i:s a' ); ?>" name="waktu"></td>
                                             </tr>
 
+                                            <tr>
+                                                <td>Cari Waktu</td>
+                                                <td><input readonly="" type="text" class="form-control" value="<?php echo date('Y-m-d' ); ?>" name="cari_waktu"></td>
+                                            </tr>
+
                                            <tr>
                                               <td>Foto surat keterangan sakit / izin</td>
                                               <td><input type="file" required="" name="bukti"></td>
@@ -241,7 +246,9 @@ error_reporting(0);
 
                                             <tr>
                                                 <td><button type="submit" name="simpan" class="btn btn-primary">Beri Keterangan</button></td>
-                                                <td><input type="reset" name="" value="Batal" class="btn btn-danger"></td>
+                                                <td><?php 
+                                                $url = isset($_SERVER['HTTP_REFERER']) ? htmlspecialchars($_SERVER['HTTP_REFERER']) : ''; ?>
+                                                <a  class="btn btn-danger" href="<?=$url?>">Batal</a></td>
                                             </tr>
                                             
                                       </tbody>

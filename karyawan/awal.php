@@ -214,6 +214,11 @@ error_reporting(0);
                                                 <td><input type="text" class="form-control" value="<?php echo date('l, d-m-Y h:i:s a' ); ?>" name="waktu" readonly="" ></td>
                                             </tr>
 
+                                            <tr>
+                                                <td>Cari Waktu</td>
+                                                <td><input type="text" class="form-control" value="<?php echo date('Y-m-d' ); ?>" name="cari_waktu" readonly="" ></td>
+                                            </tr>
+
                                            <tr>
                                               
                                            </tr>

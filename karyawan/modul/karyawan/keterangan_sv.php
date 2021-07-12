@@ -9,6 +9,7 @@ if (isset($_POST['simpan'])) {
 	$keterangan = $_POST['keterangan'];
 	$alasan = $_POST['alasan'];
 	$waktu = $_POST['waktu'];
+	$cari_waktu = $_POST['cari_waktu'];
 
 	//untuk gambar
 	$bukti = $_FILES['bukti']['name'];
@@ -28,7 +29,7 @@ if (move_uploaded_file($tmp, $path)) {
 
 
 
-$query = "INSERT INTO tb_keterangan SET id_karyawan = '$id_karyawan', nama='$nama', keterangan='$keterangan', alasan='$alasan', waktu='$waktu', bukti='$buktibaru'";
+$query = "INSERT INTO tb_keterangan SET id_karyawan = '$id_karyawan', nama='$nama', keterangan='$keterangan', alasan='$alasan', waktu='$waktu', cari_waktu='$cari_waktu', bukti='$buktibaru'";
 mysqli_query($koneksi, $query);
 
 if ($query) {

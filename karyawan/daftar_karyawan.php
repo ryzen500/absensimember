@@ -175,7 +175,10 @@ session_start();
 
                                             <tr>
                                                 <td><button type="submit" name="simpan" class="btn btn-primary">Simpan</button></td>
-                                                <td><input type="reset" name="" value="Batal" class="btn btn-danger"></td>
+                                                <!-- <td><input type="reset" name="" value="Batal" class="btn btn-danger"></td> -->
+                                                <td><?php 
+                                                $url = isset($_SERVER['HTTP_REFERER']) ? htmlspecialchars($_SERVER['HTTP_REFERER']) : ''; ?>
+                                                <a  class="btn btn-danger" href="<?=$url?>">Batal</a></td>
                                             </tr>
                                             
                                       </tbody>
