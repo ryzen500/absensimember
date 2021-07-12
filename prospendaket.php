@@ -239,8 +239,7 @@ session_start();
                                     <i class="zmdi zmdi-search"></i>
                                 </button> </form>
                             <div class="header-button">
-                                <div class="noti-wrap">
-                                    <div class="noti__item js-item-menu">
+
                                      
                                    
                         </div>
@@ -277,6 +276,7 @@ session_start();
                                            
                                         <tbody>
                                             <?php 
+
                                             $cari2 = $_POST['cari2'];
                                             $sql = "SELECT * FROM tb_keterangan WHERE cari_waktu LIKE '%$cari2%'";
                                             $query = mysqli_query($koneksi, $sql);
@@ -286,6 +286,26 @@ session_start();
                                             while ($row = mysqli_fetch_array($query)) {
                                                 # code...
                                             
+
+                                            include("koneksi.php");
+                                            if (isset($_POST['tgl_awal'])&& isset($_POST['tgl_akhir'])) {
+                                    
+                                                $tgl_awal=$_POST["tgl_awal"];
+                                                $tgl_akhir=$_POST["tgl_akhir"];
+                                    
+                                    
+                                                $sql="select * from tb_keterangan where waktu between '".$tgl_awal."' and '".$tgl_akhir."' order by id_karyawan asc";
+                                    
+                                            }else {
+                                                $sql="select * from tb_keterangan order by tmp_tgl_lahir asc";
+                                            }
+                                    
+                                            $hasil=mysqli_query($koneksi,$sql);
+                                            // var_dump($hasil);
+                                            $no=0;
+                                            while ($row =  mysqli_fetch_array($hasil)) {
+                                                
+                                                $no++;
                                              ?>
                                              
                                             <tr>

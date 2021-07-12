@@ -39,7 +39,7 @@ include ("koneksi.php");
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav justify-content-end">
-              <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
+              <li class="nav-item active"><a class="nav-link" >Home</a></li> 
               <li class="nav-item"><a class="nav-link" href="#login" rel="page-scroll">Login</a></li> 
            
               
