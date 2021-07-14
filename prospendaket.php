@@ -227,17 +227,37 @@ session_start();
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="header-wrap">
-                            <form class="form-header" action="prospenket.php" method="POST">
+                            <form class="form-header" action="prospendaket.php" method="POST">
                                 <input autocomplete="off" class="au-input au-input--xl" type="text" name="cari" placeholder="Cari ID atau nama karyawan"  value="<?php if(isset($_POST['cari'])) echo $_POST['cari'];?>"/>
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
                                 </button>
                             </form>
                             <form class="form-header" action="prospendaket.php" method="POST">
-                                <input class="au-input au-input--xl" autocomplete="off" type="date" name="cari_waktu" placeholder="cari waktu" value="<?php if(isset($_POST['cari_waktu'])) echo $_POST['cari_waktu'];?>"/>
+                                <input class="au-input au-input--xl" autocomplete="off" type="text" name="cari_waktu" placeholder="cari waktu" value="<?php if(isset($_POST['cari_waktu'])) echo $_POST['cari_waktu'];?>"/>
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
                                 </button> </form>
+
+                                <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                        <div class="icon">
+                                            <a class="js-acc-btn" href="#"><i class="fas fa-bars"></i></a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="account-dropdown__body">
+                                                <div class="account-dropdown__item">
+                                                    <a href="PrintKeterangan.php">
+                                                        <i class="zmdi zmdi-account"></i>Export PDF</a>
+                                                </div>
+                                                <div class="account-dropdown__footer">
+                                                <a href="PrintKetExcel.php">
+                                                    <i class="zmdi zmdi-power"></i>Export Excel</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             <div class="header-button">
 </div> 
                                      
@@ -277,12 +297,13 @@ session_start();
                                         <tbody>
                                             <?php 
                                             $cari_waktu = $_POST['cari_waktu'];
-                                            $sql = "SELECT * FROM tb_keterangan WHERE cari_waktu LIKE '%$cari_waktu%'";
+                                            $sql = "SELECT * FROM tb_keterangan WHERE cari_waktu LIKE '%$cari_waktu%' OR bulan LIKE '%$cari_waktu%' OR tahun LIKE '%$cari_waktu%'";
                                             $query = mysqli_query($koneksi, $sql);
 
                                             $no = 1;
 
                                             while ($row = mysqli_fetch_array($query)) {                                                # code...                                                                                         ?>
+                                                                                    
                                             <tr>
                                                 <td><?php echo $row['id']; ?></td>
                                                 <td><?php echo $row['id_karyawan']; ?></td>
@@ -310,6 +331,9 @@ session_start();
                                             </tr>
                                            <?php 
                                            $no++;                                       }
+                                                
+                                            
+                                            
 
                                             ?>
                                         </tbody>

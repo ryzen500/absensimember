@@ -109,7 +109,7 @@ error_reporting(0);
                     <div class="container-fluid">
                         <div class="header-wrap">
                             <form class="form-header" action="" method="POST">
-                                <input class="au-input au-input--xl" type="text" name="search" value="Keterangan" readonly="" />
+                                <!-- <input class="au-input au-input--xl" type="text" name="search" value="Keterangan" readonly="" /> -->
                                 
                             </form>
                             <div class="header-button">
@@ -235,8 +235,18 @@ error_reporting(0);
                                             </tr>
 
                                             <tr>
-                                                <td>Cari Waktu</td>
-                                                <td><input readonly="" type="text" class="form-control" value="<?php echo date('Y-m-d' ); ?>" name="cari_waktu"></td>
+                                                <td>Cari Tanggal</td>
+                                                <td><input readonly="" type="text" class="form-control" value="<?php echo date('d-m-Y' ); ?>" name="cari_waktu"></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Cari Bulan</td>
+                                                <td><input readonly="" type="text" class="form-control" value="<?php echo date('m-Y' ); ?>" name="bulan"></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Cari Tahun</td>
+                                                <td><input readonly="" type="text" class="form-control" value="<?php echo date('Y' ); ?>" name="tahun"></td>
                                             </tr>
 
                                            <tr>

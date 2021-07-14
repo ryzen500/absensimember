@@ -233,6 +233,31 @@ session_start();
                                     <i class="zmdi zmdi-search"></i>
                                 </button>
                             </form>
+                            <form class="form-header" action="prospendaket.php" method="POST">
+                                <input class="au-input au-input--xl" autocomplete="off" type="text" name="cari_waktu" placeholder="cari waktu" value="<?php if(isset($_POST['cari_waktu'])) echo $_POST['cari_waktu'];?>"/>
+                                <button class="au-btn--submit" type="submit">
+                                    <i class="zmdi zmdi-search"></i>
+                                </button> </form>
+
+                                <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                        <div class="icon">
+                                            <a class="js-acc-btn" href="#"><i class="fas fa-bars"></i></a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="account-dropdown__body">
+                                                <div class="account-dropdown__item">
+                                                    <a href="PrintKeterangan.php">
+                                                        <i class="zmdi zmdi-account"></i>Export PDF</a>
+                                                </div>
+                                                <div class="account-dropdown__footer">
+                                                <a href="PrintKetExcel.php">
+                                                    <i class="zmdi zmdi-power"></i>Export Excel</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             <div class="header-button">
                                 <div class="noti-wrap">
                                     <div class="noti__item js-item-menu">
