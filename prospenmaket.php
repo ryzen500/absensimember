@@ -269,8 +269,7 @@ session_start();
                                     </div>
                                 </div>
                             <div class="header-button">
-                                <div class="noti-wrap">
-                                    <div class="noti__item js-item-menu">
+</div> 
                                      
                                    
                         </div>
@@ -307,16 +306,14 @@ session_start();
                                            
                                         <tbody>
                                             <?php 
-                                            $cari = $_POST['cari'];
-                                            $sql = "SELECT * FROM tb_keterangan WHERE id_karyawan LIKE '%$cari%' OR nama LIKE '%$cari%'";
+                                            $cari_bulan = $_POST['cari_bulan'];
+                                            $sql = "SELECT * FROM tb_keterangan WHERE bulan LIKE '%$cari_bulan%' OR tahun LIKE '%$cari_bulan%'";
                                             $query = mysqli_query($koneksi, $sql);
 
                                             $no = 1;
 
-                                            while ($row = mysqli_fetch_array($query)) {
-                                                # code...
-                                            
-                                             ?>
+                                            while ($row = mysqli_fetch_array($query)) {                                                # code...                                                                                         ?>
+                                                                                    
                                             <tr>
                                                 <td><?php echo $row['id']; ?></td>
                                                 <td><?php echo $row['id_karyawan']; ?></td>
@@ -343,8 +340,10 @@ session_start();
                                                 
                                             </tr>
                                            <?php 
-                                           $no++;
-                                       }
+                                           $no++;                                       }
+                                                
+                                            
+                                            
 
                                             ?>
                                         </tbody>

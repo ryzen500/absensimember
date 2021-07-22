@@ -236,7 +236,7 @@ error_reporting(0);
 
                                             <tr>
                                                 <td>Cari Tanggal</td>
-                                                <td><input readonly="" type="text" class="form-control" value="<?php echo date('d-m-Y' ); ?>" name="cari_waktu"></td>
+                                                <td><input readonly="" type="text" class="form-control" value="<?php echo date('Y-m-d' ); ?>" name="cari_waktu"></td>
                                             </tr>
 
                                             <tr>

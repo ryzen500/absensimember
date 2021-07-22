@@ -238,7 +238,13 @@ session_start();
                                 </button> </form>
 
                                 <form class="form-header" action="prospendaket.php" method="POST">
-                                <input class="au-input au-input--xl" autocomplete="off" type="text" name="cari_waktu" placeholder="Cari " value="<?php if(isset($_POST['cari_waktu'])) echo $_POST['cari_waktu'];?>"/>
+                                <input class="au-input au-input--l" autocomplete="off" type="date" name="cari2" placeholder="Cari " value="<?php if(isset($_POST['cari2'])) echo $_POST['cari2'];?>"/>
+                                <button class="au-btn--submit" type="submit">
+                                    <i class="zmdi zmdi-search"></i>
+                                </button> </form>
+
+                                <form class="form-header" action="prospenmaket.php" method="POST">
+                                <input class="au-input au-input--l" autocomplete="off" type="text" name="cari_bulan" placeholder="cari bulan" value="<?php if(isset($_POST['cari_bulan'])) echo $_POST['cari_bulan'];?>"/>
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
                                 </button> </form>
@@ -251,12 +257,16 @@ session_start();
                                         <div class="account-dropdown js-dropdown">
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                    <a href="PrintKeterangan.php">
-                                                        <i class="zmdi zmdi-account"></i>Export PDF</a>
+                                                    <a href="PrintketPDF.php" target="blank">
+                                                      <i class="far fa-file-pdf"></i>Export PDF</a>
                                                 </div>
                                                 <div class="account-dropdown__footer">
-                                                <a href="PrintKetExcel.php">
-                                                    <i class="zmdi zmdi-power"></i>Export Excel</a>
+                                                <a href="printketExcel.php" target="blank">
+                                                <i class="far fa-file-excel"></i>Export Excel</a>
+                                                </div>
+                                                <div class="account-dropdown__footer">
+                                                <a href="printket.php" target="blank">
+                                                <i class="fas fa-print"></i>Print Data</a>
                                                 </div>
                                             </div>
                                         </div>
