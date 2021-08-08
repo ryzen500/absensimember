@@ -17,9 +17,14 @@
 	<?php 
 	include 'koneksi.php';
 	?>
-	<center>
-		<h2>LAPORAN ABSENSI KETERANGAN</h2>
-	</center>
+
+	<div style="text-align: right; margin: 30px 0 0 8px;"><?php
+date_default_timezone_set('Asia/Jakarta');
+echo date('d-m-Y H:i:s');?></div>
+
+	<div style="text-align:justify; font-weight:bold; font-size:24px; padding: 40px 40px;">
+	<img src="img/logo.jpeg"  style="float:left; width:135px; height:90px; margin: -30px 15px 20px 0;" />
+	LAPORAN ABSENSI KETERANGAN</div>
 
 	<table border="1" style="width : 100%;">
 		<tr>
@@ -37,7 +42,7 @@
 		?>
 		<tr>
 			<td><?php echo $no++; ?></td>
-			<td><?php echo $data['id']; ?></td>
+			<td><?php echo $data['id_karyawan']; ?></td>
 			<td><?php echo $data['nama']; ?></td>
 			<td><?php echo $data['keterangan']; ?></td>
             <td><?php echo $data['alasan']; ?></td>
