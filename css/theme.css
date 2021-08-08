@@ -809,7 +809,7 @@ section {
     min-width: 935px;
 }
 .au-input--l {
-    min-width: 485px;
+    min-width: 200px;
 }
 
 @media (max-width: 1600px) {
