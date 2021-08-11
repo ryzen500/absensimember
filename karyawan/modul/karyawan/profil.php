@@ -113,8 +113,8 @@ error_reporting(0);
                     <div class="container-fluid">
                         <div class="header-wrap">
                             <form class="form-header" action="" method="POST">
-                                <input class="au-input au-input--xl" type="text" name="search" value="Profil" readonly="" />
-                           
+                                <!-- <input class="au-input au-input--xl" type="text" name="search" value="Profil" readonly="" />
+                            -->
                             </form>
                             <div class="header-button">
                                
