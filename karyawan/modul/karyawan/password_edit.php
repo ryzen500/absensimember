@@ -6,12 +6,12 @@ session_start();
  
 <?php 
 	include '../koneksi.php';
-	$id = $_GET['id'];
-	$data = mysqli_query($koneksi, "SELECT * FROM tb_daftar WHERE id = '$id'");
+	$id_karyawan = $_GET['id_karyawan'];
+	$data = mysqli_query($koneksi, "SELECT * FROM tb_karyawan WHERE id_karyawan = '$id_karyawan'");
     while ($d = mysqli_fetch_array($data)) {
       
     
- ?>
+ ?> 
 
 <!DOCTYPE html>
 <html>
@@ -62,10 +62,10 @@ session_start();
     <title>Ubah Data</title>
 </head>
 <body>
-<form action="proedit_admin.php" method="POST" >
+<form action="?m=karyawan&s=update" method="POST" >
 <div class="form-group">
     <label>Id</label>
-    <input type="number" class="form-control" readonly="" name="id" autocomplete="off" value="<?php echo $d['id'];?>">
+    <input type="number" class="form-control" readonly="" name="id_karyawan" autocomplete="off" value="<?php echo $d['id_karyawan'];?>">
   </div>
   <div class="form-group">
     <label >password</label>

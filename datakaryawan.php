@@ -258,8 +258,9 @@ session_start();
                                                 <td>NIP</td>
                                                 <td>
                                                 
-                                                <input type="text" class="form-control" maxlength="9" required="" name="id_karyawan" autocomplete="off" size="25px" maxlength="25px">    
-                                                
+                                                <input type="number" class="form-control" id="nip" maxlength="9" required="" pattern="^[A-Za-z0-9_]{1,5}$" autofocus required
+                                                oninvalid="this.setCustomValidity('Input Maximal 5 Character!')" name="id_karyawan" autocomplete="off" size="25px" maxlength="25px"> 
+ 
                                             </td>
                                             </tr>
                                             <tr>
@@ -1007,7 +1008,16 @@ session_start();
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
-
+    <script type="text/javascript">
+    function validasi_input(form){
+    var maxcar = 5;
+    if (form.id_karyawan.value.length > mincar){
+    alert("Panjang NIP Maximal 5 Karater!");
+    form.username.focus();
+    return (false);
+    }
+   return (true);
+    }
 </body>
 
 </html>

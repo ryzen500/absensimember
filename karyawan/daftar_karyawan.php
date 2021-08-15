@@ -79,7 +79,7 @@ session_start();
                                                 <td>NIP</td>
                                                 <td>
                                                 
-                                                <input type="text" class="form-control" id="nip" maxlength="9" required="" pattern="^[A-Za-z0-9_]{1,5}$" autofocus required
+                                                <input type="number" class="form-control" id="nip" maxlength="9" required="" pattern="^[A-Za-z0-9_]{1,5}$" autofocus required
     oninvalid="this.setCustomValidity('Input Maximal 5 Character!')" name="id_karyawan" autocomplete="off" size="25px" maxlength="25px"> 
 
   

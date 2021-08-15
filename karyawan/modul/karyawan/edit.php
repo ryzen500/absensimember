@@ -107,8 +107,8 @@ error_reporting(0);
                     <div class="container-fluid">
                         <div class="header-wrap">
                             <form class="form-header" action="" method="POST">
-                                <input class="au-input au-input--xl" type="text" name="search" value="Edit data" readonly="" />
-                               
+                                <!-- <input class="au-input au-input--xl" type="text" name="search" value="Edit data" readonly="" />
+                                -->
                             </form>
                             <div class="header-button">
                                 
@@ -209,8 +209,9 @@ error_reporting(0);
                                             <tr>
                                                 <td>NIP</td>
                                                 <td>
-                                                	<input type="text" value="<?php echo $r['id_karyawan'];?>" name="id_karyawan">
-                                                
+                                                <input type="number" value="<?php echo $r['id_karyawan'];?>" class="form-control" id="nip" maxlength="9" required="" pattern="^[A-Za-z0-9_]{1,5}$" autofocus required
+                                                oninvalid="this.setCustomValidity('Input Maximal 5 Character!')" name="id_karyawan" autocomplete="off" size="25px" maxlength="25px"> 
+ 
                                                 
                                                 
                                             </td>
@@ -233,7 +234,7 @@ error_reporting(0);
                                             <tr>
                                                 <td>Password</td>
                                                 <td>
-                                                	<input type="text" name="password">
+                                                	<input type="password" name="password" readonly="" value="<?php echo $r['password'];?>">
                                                 	</td>
                                             </tr>
 
@@ -328,7 +329,7 @@ error_reporting(0);
 
                                             <tr>
                                                 <td><input type="submit" name="simpan" class="btn btn-success" value="Proses"></td>
-                                               
+                                               <td><button type="submit" class="btn btn-warning"  name="ubahpassword">Ubah password</button></td>
                                             </tr>
                                             
                                       </tbody>
@@ -380,7 +381,17 @@ error_reporting(0);
     </script>
 
     <!-- Main JS-->
-    <script src="js/main.js"></script>
+    <script src="js/main.js">
+    <script type="text/javascript">
+    function validasi_input(form){
+    var maxcar = 5;
+    if (form.id_karyawan.value.length > mincar){
+    alert("Panjang NIP Maximal 5 Karater!");
+    form.username.focus();
+    return (false);
+    }
+   return (true);
+    }</script>
 
 </body>
 
