@@ -45,7 +45,8 @@
     ?>
     <br><br>
     <a href="prosketExcel.php">Export to Excel</a><br>
-    <a href="Printket.php">Print</a>
+    <a href="Printket.php">Print</a><br>
+    <a href="data_keterangan.php">Kembali</a>
 </body>
 
 </html>

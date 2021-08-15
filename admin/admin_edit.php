@@ -80,7 +80,9 @@ session_start();
 
   <button type="submit" class="btn btn-primary"  name="ubahdata">Ubah Data</button>
   <button type="submit" class="btn btn-warning"  name="ubahpassword">Ubah password</button>
+
 </form>
+<button  class="btn btn-danger" style="float:right; transform: translate(-1040px,-39px);" onclick="history.back();">cancel</button>
 
 </body>
 </html>

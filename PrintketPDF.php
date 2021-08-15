@@ -24,7 +24,7 @@ $pdf->SetFont('Times','',11);
 //Membuat Koneksi ke database akademik
 $host="localhost";
 $user="root";
-$password="";
+$password="123";
 $db="karyawansi";
 
 $kon = mysqli_connect($host,$user,$password,$db);
