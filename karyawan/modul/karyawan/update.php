@@ -100,14 +100,14 @@ if(isset($_POST['berubah'])){
       var_dump($ubah); 
       if($ubah){
         echo "<script>alert('Ubah Data Dengan ID User = ".$id_karyawan." Berhasil') </script>";
-        echo "<script>window.location.href = '../datauser.php' </script>";
+        echo "<script>window.location.href = 'edit.php' </script>";
       }
       else {
         $sql    = "SELECT * FROM tb_karyawan WHERE id_karyawan = '".$id_karyawan."' ";
         $query  = mysqli_query($koneksi, $sql);
         while ($row = mysqli_fetch_array($query)) {
           echo "Maaf, Terjadi kesalahan saat mencoba untuk menyimpan data ke database.";
-          echo "<br><a href=\"edit_admin.php?id=".$row['id_karyawan']."\"> Kembali Ke From ! </a>";
+          echo "<br><a href=\"edit.php?id=".$row['id_karyawan']."\"> Kembali Ke From ! </a>";
         }
       }
     

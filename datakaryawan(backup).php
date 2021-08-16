@@ -199,6 +199,10 @@ session_start();
                                 <i class="fas fa-chart-bar"></i>Data Karyawan</a>
                         </li>
                         <li>
+                            <a href="datakaryawan(backup).php">
+                                <i class="fas fa-chart-bar"></i>Backup Data Karyawan </a>
+                        </li>
+                        <li>
                             <a href="table.html">
                                 <i class="fas fa-table"></i>Data User</a>
                         </li>

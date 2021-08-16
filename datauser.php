@@ -895,7 +895,18 @@ error_reporting(0);
     </script>
 
     <!-- Main JS-->
-    <script src="js/main.js"></script>
+    <script src="js/main.js">
+    <script type="text/javascript">
+    function validasi_input(form){
+    var maxcar = 5;
+    if (form.id_karyawan.value.length > mincar){
+    alert("Panjang NIP Maximal 5 Karater!");
+    form.username.focus();
+    return (false);
+    }
+   return (true);
+    }</script>
+
 
 </body>
 
