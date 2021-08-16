@@ -1,4 +1,4 @@
-
+<?php include("koneksi.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -259,9 +259,25 @@ var myChart = new Chart(ctx, {
      //membuat label chart
         labels: ['January', 'February', 'March', 'April', 'May', 'June','July','August','September', 'October', 'November', 'December'],
         datasets: [{
-            label: '# of Votes',
+            // label: '# of Votes',
+            label: 'Data Yang Isi Absensi',
+
             //isi chart
-            data: [12, 19, 3, 5, 2, 3,6,7,8,9,1,2],
+            // Wait
+            data: [<?php $absensi_january= mysqli_query($koneksi,"SELECT * FROM  tb_absen WHERE waktu LIKE '%-01-%'");
+            echo mysqli_num_rows($absensi_january);?>
+            , <?php $absensi_february= mysqli_query($koneksi,"SELECT * FROM  tb_absen WHERE waktu LIKE '%-02-%'");
+            echo mysqli_num_rows($absensi_february);?>, <?php $absensi_march= mysqli_query($koneksi,"SELECT * FROM  tb_absen WHERE waktu LIKE '%-03-%'");
+            echo mysqli_num_rows($absensi_march);?>, <?php $absensi_April= mysqli_query($koneksi,"SELECT * FROM  tb_absen WHERE waktu LIKE '%-04-%'");
+            echo mysqli_num_rows($absensi_April);?>, <?php $absensi_may= mysqli_query($koneksi,"SELECT * FROM  tb_absen WHERE waktu LIKE '%-05-%'");
+            echo mysqli_num_rows($absensi_may);?>, <?php $absensi_june= mysqli_query($koneksi,"SELECT * FROM  tb_absen WHERE waktu LIKE '%-06-%'");
+            echo mysqli_num_rows($absensi_june);?>,<?php $absensi_july= mysqli_query($koneksi,"SELECT * FROM  tb_absen WHERE waktu LIKE '%-07-%'");
+            echo mysqli_num_rows($absensi_july);?>,<?php $absensi_August= mysqli_query($koneksi,"SELECT * FROM  tb_absen WHERE waktu LIKE '%-08-%'");
+            echo mysqli_num_rows($absensi_August);?>,<?php $absensi_september= mysqli_query($koneksi,"SELECT * FROM  tb_absen WHERE waktu LIKE '%-09-%'");
+            echo mysqli_num_rows($absensi_september);?>,<?php $absensi_October= mysqli_query($koneksi,"SELECT * FROM  tb_absen WHERE waktu LIKE '%-10-%'");
+            echo mysqli_num_rows($absensi_October);?>,<?php $absensi_november= mysqli_query($koneksi,"SELECT * FROM  tb_absen WHERE waktu LIKE '%-11-%'");
+            echo mysqli_num_rows($absensi_november);?>,<?php $absensi_december= mysqli_query($koneksi,"SELECT * FROM  tb_absen WHERE waktu LIKE '%-12-%'");
+            echo mysqli_num_rows($absensi_december);?>],
             //membuat warna pada bar chart
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
