@@ -213,7 +213,7 @@
                     <div class="container-fluid">
                         <div class="header-wrap">
                             <h1>SIKaryawan Beta 1.0</h1>
-                          
+                           >
                         </div>
                     </div>
                 </div>
@@ -225,8 +225,8 @@
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="row">
-                            <center><img src="img/logokaryawan.png" width="500" class="img img-responsive" height="500"></center><br>
-                            <strong class="col-md-12" style="margin-top: 5rem;">Selamat datang admin SIKaryawan</strong>
+                            <img src="img/logokaryawan.png" width="500" class="img img-responsive" height="500"><br>
+                            <strong class="col-md-12" style="margin-top: 5rem; text-align:center;">Tampilan Data Grafik Absensi</strong>
                             <!-- Grafik -->
                             <canvas id="myChart"></canvas>
                                     </div>
