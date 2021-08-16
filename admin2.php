@@ -1,4 +1,4 @@
-
+<?php include("koneksi.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,6 +33,10 @@
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
+
+    <!-- Main the Call Script -->
+    <link rel="stylesheet" href="vendor/chartjs/Chart.min.css">
+    <script type="text/javascript" src="vendor/chartjs/Chart.bundle.min.js"></script>
 
 </head>
 
@@ -209,7 +213,7 @@
                     <div class="container-fluid">
                         <div class="header-wrap">
                             <h1>SIKaryawan Beta 1.0</h1>
-                          
+                           >
                         </div>
                     </div>
                 </div>
@@ -221,9 +225,10 @@
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="row">
-                            <center><img src="img/logokaryawan.png" width="500" class="img img-responsive" height="500"></center><br>
-                            <strong class="col-md-12" style="margin-top: 5rem;">Selamat datang admin SIKaryawan</strong>
-
+                            <img src="img/logokaryawan.png" width="500" class="img img-responsive" height="500"><br>
+                            <strong class="col-md-12" style="margin-top: 5rem; text-align:center;">Tampilan Data Grafik Absensi</strong>
+                            <!-- Grafik -->
+                            <canvas id="myChart"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -243,6 +248,79 @@
         </div>
 
     </div>
+    <script>
+//deklarasi chartjs untuk membuat grafik 2d di id mychart 
+var ctx = document.getElementById('myChart').getContext('2d');
+
+var myChart = new Chart(ctx, {
+ //chart akan ditampilkan sebagai bar chart
+    type: 'bar',
+    data: {
+     //membuat label chart
+        labels: ['January', 'February', 'March', 'April', 'May', 'June','July','August','September', 'October', 'November', 'December'],
+        datasets: [{
+            // label: '# of Votes',
+            label: 'Data Yang Isi Absensi',
+
+            //isi chart
+            // Wait
+            data: [<?php $absensi_january= mysqli_query($koneksi,"SELECT * FROM  tb_absen WHERE waktu LIKE '%-01-%'");
+            echo mysqli_num_rows($absensi_january);?>
+            , <?php $absensi_february= mysqli_query($koneksi,"SELECT * FROM  tb_absen WHERE waktu LIKE '%-02-%'");
+            echo mysqli_num_rows($absensi_february);?>, <?php $absensi_march= mysqli_query($koneksi,"SELECT * FROM  tb_absen WHERE waktu LIKE '%-03-%'");
+            echo mysqli_num_rows($absensi_march);?>, <?php $absensi_April= mysqli_query($koneksi,"SELECT * FROM  tb_absen WHERE waktu LIKE '%-04-%'");
+            echo mysqli_num_rows($absensi_April);?>, <?php $absensi_may= mysqli_query($koneksi,"SELECT * FROM  tb_absen WHERE waktu LIKE '%-05-%'");
+            echo mysqli_num_rows($absensi_may);?>, <?php $absensi_june= mysqli_query($koneksi,"SELECT * FROM  tb_absen WHERE waktu LIKE '%-06-%'");
+            echo mysqli_num_rows($absensi_june);?>,<?php $absensi_july= mysqli_query($koneksi,"SELECT * FROM  tb_absen WHERE waktu LIKE '%-07-%'");
+            echo mysqli_num_rows($absensi_july);?>,<?php $absensi_August= mysqli_query($koneksi,"SELECT * FROM  tb_absen WHERE waktu LIKE '%-08-%'");
+            echo mysqli_num_rows($absensi_August);?>,<?php $absensi_september= mysqli_query($koneksi,"SELECT * FROM  tb_absen WHERE waktu LIKE '%-09-%'");
+            echo mysqli_num_rows($absensi_september);?>,<?php $absensi_October= mysqli_query($koneksi,"SELECT * FROM  tb_absen WHERE waktu LIKE '%-10-%'");
+            echo mysqli_num_rows($absensi_October);?>,<?php $absensi_november= mysqli_query($koneksi,"SELECT * FROM  tb_absen WHERE waktu LIKE '%-11-%'");
+            echo mysqli_num_rows($absensi_november);?>,<?php $absensi_december= mysqli_query($koneksi,"SELECT * FROM  tb_absen WHERE waktu LIKE '%-12-%'");
+            echo mysqli_num_rows($absensi_december);?>],
+            //membuat warna pada bar chart
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(98, 0, 16, 0.8)',
+                'rgba(255, 0, 255, 0.8)',
+                'rgba(255, 0, 114, 0.8)',
+                'rgba(0, 0, 0, 1)',
+                'rgba(255, 0, 0, 1)',
+                'rgba(12, 131, 155, 1)',
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(98, 0, 16, 0.8)',
+                'rgba(255, 0, 255, 0.8)',
+                'rgba(255, 0, 114, 0.8)',
+                'rgba(0, 0, 0, 1)',
+                'rgba(255, 0, 0, 1)',
+                'rgba(12, 131, 155, 1)',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
 
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.2.1.min.js"></script>
