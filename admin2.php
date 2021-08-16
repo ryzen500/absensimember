@@ -257,11 +257,11 @@ var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
      //membuat label chart
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['January', 'February', 'March', 'April', 'May', 'June','July','August','September', 'October', 'November', 'December'],
         datasets: [{
             label: '# of Votes',
             //isi chart
-            data: [12, 19, 3, 5, 2, 3],
+            data: [12, 19, 3, 5, 2, 3,6,7,8,9,1,2],
             //membuat warna pada bar chart
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -269,7 +269,13 @@ var myChart = new Chart(ctx, {
                 'rgba(255, 206, 86, 0.2)',
                 'rgba(75, 192, 192, 0.2)',
                 'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(98, 0, 16, 0.8)',
+                'rgba(255, 0, 255, 0.8)',
+                'rgba(255, 0, 114, 0.8)',
+                'rgba(0, 0, 0, 1)',
+                'rgba(255, 0, 0, 1)',
+                'rgba(12, 131, 155, 1)',
             ],
             borderColor: [
                 'rgba(255, 99, 132, 1)',
@@ -277,7 +283,13 @@ var myChart = new Chart(ctx, {
                 'rgba(255, 206, 86, 1)',
                 'rgba(75, 192, 192, 1)',
                 'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+                'rgba(255, 159, 64, 1)',
+                'rgba(98, 0, 16, 0.8)',
+                'rgba(255, 0, 255, 0.8)',
+                'rgba(255, 0, 114, 0.8)',
+                'rgba(0, 0, 0, 1)',
+                'rgba(255, 0, 0, 1)',
+                'rgba(12, 131, 155, 1)',
             ],
             borderWidth: 1
         }]
