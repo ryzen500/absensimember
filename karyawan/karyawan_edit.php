@@ -113,7 +113,7 @@ session_start();
 
     <div class="form-group">
       <label>Alamat</label>
-      <textarea autocomplete="off" class="form-control" name="alamat" value="<?php echo $d['alamat'];?>"></textarea>
+      <textarea autocomplete="off" class="form-control" name="alamat" ><?php echo $d['alamat'];?></textarea>
     </div>
     
     <div class="form-group">
@@ -165,6 +165,9 @@ session_start();
 
   <button type="submit" class="btn btn-primary" name="ubahdata">Ubah Data</button>
   <button type="submit" class="btn btn-warning"  name="ubahpassword">Ubah password</button>
+  <?php 
+                                                $url = isset($_SERVER['HTTP_REFERER']) ? htmlspecialchars($_SERVER['HTTP_REFERER']) : ''; ?>
+                                                <a  class="btn btn-danger" href="<?=$url?>">Batal</a>
 </form>
     <!-- Main JS-->
     <script src="js/main.js"></script>

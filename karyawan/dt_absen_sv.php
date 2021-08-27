@@ -5,10 +5,11 @@ if (isset($_POST['simpan'])) {
 	$nama = $_POST['nama'];
 	$waktu = $_POST['waktu'];
 	$cari_waktu = $_POST['cari_waktu'];
-
+	$bulan = $_POST['bulan'];
+	$tahun = $_POST['tahun'];
 }
 
-$save = "INSERT INTO tb_absen SET id_karyawan='$id_karyawan', nama='$nama', waktu='$waktu', cari_waktu='$cari_waktu'";
+$save = "INSERT INTO tb_absen SET id_karyawan='$id_karyawan', nama='$nama', waktu='$waktu', cari_waktu='$cari_waktu', bulan='$bulan', tahun='$tahun'";
 mysqli_query($koneksi, $save);
 
 if ($save) {

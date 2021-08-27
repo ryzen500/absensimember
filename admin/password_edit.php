@@ -77,11 +77,10 @@ session_start();
   </div>
 
   <td><button type="submit" id="btnSubmit"  class="btn btn-primary"  name="berubah">Save New Password</button></td>
-  <td><?php 
-   $url = isset($_SERVER['HTTP_REFERER']) ? htmlspecialchars($_SERVER['HTTP_REFERER']) : ''; ?>
-   <a  class="btn btn-danger" href="<?=$url?>">Batal</a></td>
-  <!-- <a href="admin_edit.php"><button class="btn btn-warning">Cancel</button></a> -->
+
+
 </form>
+<button  class="btn btn-danger" style="float:right; transform: translate(-1120px,-39px);"onclick="history.back();">cancel</button>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript">
         $(function () {

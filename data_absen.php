@@ -135,7 +135,7 @@ error_reporting(0);
                                 <i class="fas fa-chart-bar"></i>Data Karyawan</a>
                         </li>
                         <li>
-                            <a href="table.html">
+                            <a href="datauser.php">
                                 <i class="fas fa-table"></i>Data User</a>
                         </li>
                         <li>
@@ -225,13 +225,46 @@ error_reporting(0);
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="header-wrap">
-                            <form class="form-header" action="prospenab.php" method="POST">
-                                <input autocomplete="off" class="au-input au-input--xl" type="text" name="cari" placeholder="Cari ID atau Nama Karyawan" />
+                        <form class="form-header" action="prospenab.php" method="POST">
+                                <input class="au-input au-input--xl" autocomplete="off" type="text" name="cari" placeholder="Cari ID atau nama karyawan" value="<?php if(isset($_POST['cari'])) echo $_POST['cari'];?>" />
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
-                                </button>
-                            </form>
-                           
+                                </button> </form>
+
+                                <form class="form-header" action="prospendaab.php" method="POST">
+                                <input class="au-input au-input--l" autocomplete="off" type="date" name="cari2" placeholder="Cari " value="<?php if(isset($_POST['cari2'])) echo $_POST['cari2'];?>"/>
+                                <button class="au-btn--submit" type="submit">
+                                    <i class="zmdi zmdi-search"></i>
+                                </button> </form>
+
+                                <form class="form-header" action="prospenmaab.php" method="POST">
+                                <input class="au-input au-input--l" autocomplete="off" type="text" name="cari_bulan" placeholder="cari bulan" value="<?php if(isset($_POST['cari_bulan'])) echo $_POST['cari_bulan'];?>"/>
+                                <button class="au-btn--submit" type="submit">
+                                    <i class="zmdi zmdi-search"></i>
+                                </button> </form>
+                                <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                        <div class="icon">
+                                            <a class="js-acc-btn" href="#"><i class="fas fa-bars"></i></a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="account-dropdown__body">
+                                                <div class="account-dropdown__item">
+                                                    <a href="PrintabPDF.php" target="blank">
+                                                      <i class="far fa-file-pdf"></i>Export PDF</a>
+                                                </div>
+                                                <div class="account-dropdown__footer">
+                                                <a href="printabExcel.php" target="blank">
+                                                <i class="far fa-file-excel"></i>Export Excel</a>
+                                                </div>
+                                                <div class="account-dropdown__footer">
+                                                <a href="printab.php" target="blank">
+                                                <i class="fas fa-print"></i>Print Data</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>

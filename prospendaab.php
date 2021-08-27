@@ -1,7 +1,6 @@
-<?php
-error_reporting(0); 
+<?php 
 require_once("koneksi.php");
-session_start();
+error_reporting(0);
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +20,7 @@ session_start();
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Data Karyawan</title>
+    <title>Data Absen</title>
 
     <!-- Fontfaces CSS-->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="all">
@@ -68,8 +67,7 @@ session_start();
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                            <img src="images/icon/logo.png" alt="CoolAdmin" />
-                        </a>
+                                                  </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
                                 <span class="hamburger-inner"></span>
@@ -80,7 +78,7 @@ session_start();
             </div>
             <nav class="navbar-mobile">
                 <div class="container-fluid">
-                   <ul class="navbar-mobile__list list-unstyled">
+                    <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
                             <a class="js-arrow" href="admin2.php">
                                 <i class="fas fa-tachometer-alt"></i>Beranda</a>
@@ -91,10 +89,6 @@ session_start();
                         <li>
                             <a href="datakaryawan.php">
                                 <i class="fas fa-chart-bar"></i>Data Karyawan</a>
-                        </li>
-                        <li>
-                            <a href="Back_datakaryawan.php">
-                                <i class="fas fa-chart-bar"></i>Backup Data Karyawan</a>
                         </li>
                         <li>
                             <a href="datauser.php">
@@ -125,7 +119,7 @@ session_start();
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <h2>Admin</h2>
+                    <h1>admin</h1>
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -136,13 +130,9 @@ session_start();
                                 <i class="fas fa-tachometer-alt"></i>Beranda</a>
                           
                         </li>
-                          <li class="active">
+                        <li>
                             <a href="datakaryawan.php">
                                 <i class="fas fa-chart-bar"></i>Data Karyawan</a>
-                        </li>
-                        <li>
-                            <a href="Back_datakaryawan.php">
-                                <i class="fas fa-chart-bar"></i>Backup Data Karyawan </a>
                         </li>
                         <li>
                             <a href="datauser.php">
@@ -152,13 +142,14 @@ session_start();
                             <a href="datajabatan.php">
                                 <i class="far fa-check-square"></i>Data Jabatan</a>
                         </li>
-                        <li>
+                        <li class="active has-sub">
                             <a href="data_absen.php">
                                 <i class="fas fa-calendar-alt"></i>Data Absen</a>
                         </li>
-                        <li>
+                          <li>
                             <a href="data_keterangan.php">
-                                <i class="fas fa-map-marker-alt"></i>Data Keterangan</a>
+                                <i class="fas fa-table"></i>data Keterangan
+                            </a>
                         </li>
                         <!--<li>
                             <a href="map.html">
@@ -234,16 +225,46 @@ session_start();
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="header-wrap">
-                           
-                             <form class="form-header" action="prospenkar.php" method="POST">
-                                <input class="au-input au-input--xl" autocomplete="off" type="text" name="cari" placeholder="Cari ID atau nama karyawan" />
+                        <form class="form-header" action="prospenab.php" method="POST">
+                                <input class="au-input au-input--xl" autocomplete="off" type="text" name="cari" placeholder="Cari ID atau nama karyawan" value="<?php if(isset($_POST['cari'])) echo $_POST['cari'];?>" />
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
-                                </button>
-                            </form>
-                            <div class="header-button">
-                                
-                            </div>
+                                </button> </form>
+
+                                <form class="form-header" action="prospendaab.php" method="POST">
+                                <input class="au-input au-input--l" autocomplete="off" type="date" name="cari2" placeholder="Cari " value="<?php if(isset($_POST['cari2'])) echo $_POST['cari2'];?>"/>
+                                <button class="au-btn--submit" type="submit">
+                                    <i class="zmdi zmdi-search"></i>
+                                </button> </form>
+
+                                <form class="form-header" action="prospenmaab.php" method="POST">
+                                <input class="au-input au-input--l" autocomplete="off" type="text" name="cari_bulan" placeholder="cari bulan" value="<?php if(isset($_POST['cari_bulan'])) echo $_POST['cari_bulan'];?>"/>
+                                <button class="au-btn--submit" type="submit">
+                                    <i class="zmdi zmdi-search"></i>
+                                </button> </form>
+                                <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                        <div class="icon">
+                                            <a class="js-acc-btn" href="#"><i class="fas fa-bars"></i></a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="account-dropdown__body">
+                                                <div class="account-dropdown__item">
+                                                    <a href="PrintabPDF.php" target="blank">
+                                                      <i class="far fa-file-pdf"></i>Export PDF</a>
+                                                </div>
+                                                <div class="account-dropdown__footer">
+                                                <a href="printabExcel.php" target="blank">
+                                                <i class="far fa-file-excel"></i>Export Excel</a>
+                                                </div>
+                                                <div class="account-dropdown__footer">
+                                                <a href="printab.php" target="blank">
+                                                <i class="fas fa-print"></i>Print Data</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -255,201 +276,65 @@ session_start();
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
-                        <div class="row">
-                           <div class="table-responsive table--no-card m-b-30">
-                            <form action="dt_karyawan_sv.php" enctype="multipart/form-data" method="post">
-                                <div class="form-group">
-                                <table class="table table-borderless table-striped table-earning" >
-                                        
-                                        <tbody>
-                                            <tr>
-                                                <td>NIP</td>
-                                                <td>
-                                                
-                                                <input type="text" class="form-control" id="nip" maxlength="9" required="" pattern="^[A-Za-z0-9_]{1,5}$" autofocus required
-                                                oninvalid="this.setCustomValidity('Input Maximal 5 Character!')" name="id_karyawan" autocomplete="off" size="25px" maxlength="25px"> 
- 
-                                            </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Username</td>
-                                                <td>
-                                                
-                                                <input type="text" class="form-control" required="" name="username" autocomplete="off">    
-                                                
-                                            </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Password</td>
-                                                <td>
-                                                
-                                                <input type="text" class="form-control" required="" name="password" autocomplete="off">    
-                                                
-                                            </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Nama</td>
-                                                <td><input type="text" class="form-control" required="" name="nama" autocomplete="off"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Tempat dan Tanggal Lahir</td>
-                                                <td><input type="text" class="form-control" required="" name="tmp_tgl_lahir" autocomplete="off"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jenis Kelamin</td>
-                                                <td>
-                                                <select class="form-control" required="" name="jenkel">
-                                                    <option>--</option>
-                                                    <option>Laki-laki</option>
-                                                    <option>Perempuan</option>
-                                                </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Agama</td>
-                                                <td>
-                                                    <div class="form-group">
-                                                    <select class="form-control" required="" name="agama">
-                                                        <option>--</option>
-                                                        <option>Islam</option>
-                                                        <option>Kristen</option>
-                                                        <option>Katholik</option>
-                                                        <option>Hindu</option>
-                                                        <option>Buddha</option>
-                                                        <option>KongHuCu</option>
-                                                    </select>    
-                                                    </div>
-                                                    
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Alamat</td> 
-                                                <td><textarea class="form-control" required="" name="alamat" autocomplete="off"></textarea> </td>
-                                            </tr>
-                                            <tr>
-                                                <td>No Telepon</td>
-                                                <td><input type="text" autocomplete="off" maxlength="18" required="" class="form-control" name="no_tel"></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jabatan</td>
-                                                <td>
-                                                <select class="form-control" name="jabatan" required="">
-                                                <?php 
-
-                                                include 'koneksi.php';
-
-                                                $sql = "SELECT * FROM tb_jabatan";
-
-                                                $hasil = mysqli_query($koneksi, $sql);
-
-                                                
-
-                                                while ($data = mysqli_fetch_array($hasil)) {
-                                                    
-                                                
-                                                
-
-                                                 ?>
-                                                <option value="<?php echo $data['jabatan'];?>"><?php echo $data['jabatan']; ?></option>
-                                                <?php } ?>
-                                                   
-                                                </select>
-                                            </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Foto</td>
-                                                <td><input type="file" name="foto" required=""></td>
-                                            </tr>
-
-                                            <tr>
-                                                <td><button type="submit" name="simpan" class="btn btn-primary">Simpan</button></td>
-                                                <td><input type="reset" name="" value="Batal" class="btn btn-danger"></td>
-                                            </tr>
-                                            
-                                      </tbody>
-                                    </table>
-                                        </div>
-                            </form>
-                                    
-                                </div>    
-                        </div>
-                        <?php 
-                        include 'koneksi.php';
-                        $query1 = "SELECT * FROM tb_karyawan ORDER BY id_karyawan";
-
-                        $pola = 'asc';
-                        $polabaru = 'asc';
-
-                        if (isset($_GET['orderby'])) {
-                            $orderby = $_GET['orderby'];
-                            $pola = $_GET['pola'];
-
-                        $query1 = "SELECT * FROM tb_karyawan ORDER BY $orderby $pola";
-                        mysqli_query($koneksi, $query1);
-                        if ($pola=='asc') {
-                            $polabaru = 'desc';
-                        }else{
-                            $polabaru = 'asc';
-                        }
-
-                        }
-                         ?>
+                     
                         <div class="row">
 
                                 <div class="table-responsive table--no-card m-b-30">
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
                                             <tr>
-                                                
-                                 <th>NIP</th>
-                                 <th>Nama</th>
-                                 <th>Tempat & tanggal lahir</th>
-                                 <th class="text-right">Jenis Kelamin</th>
-                                 <th class="text-right">Agama</th>
-                                 <th>Alamat</th>
-                                 <th>Nomor Telepon</th>
-                                 <th>Jabatan</th>
-                                 <th>Foto</th>
-                                <th>Aksi</th>
+                                                <th>No</th>
+                                                <th>Nip</th>
+                                                <th>Nama</th>
+                                                <th>Waktu</th>
+                                                <th>aksi</th>
                                                 
                                             </tr>
                                         </thead>
                                         <?php 
-                                            
+                                            include 'koneksi.php';
+                                            $sql = "SELECT * FROM tb_absen";
+                                            $query = mysqli_query($koneksi, $sql);
 
                                             $no = 1;
-                                          
+                                            // while ($row = mysqli_fetch_array($query)) {
                                                 
                                             
                                          ?>
                                         <tbody>
-                                           
+                                        <?php 
+                                            $cari2 = $_POST['cari2'];
+                                            $sql = "SELECT * FROM tb_absen WHERE cari_waktu LIKE '%$cari2%'";
+                                            $query = mysqli_query($koneksi, $sql);
+
+                                            $no = 1;
+
+                                            while ($row = mysqli_fetch_array($query)) {                                                # code...                                                                                         ?>
+                                            
+                                            <tr>
+                                                <td><?php echo $no ?></td>
+                                                <td><?php echo $row['id_karyawan']; ?></td>
+                                                <td><?php echo $row ['nama']; ?></td>
+                                                <td><?php echo $row['waktu']; ?></td>
+                                                
+                                                    
+
+                                                </td>
+                                                <td> <a href="absen/hapus_absen.php?id=<?php echo $row['id']; ?>"><button class="btn btn-danger" onclick="return confirm('yakin ingin dihapus?');">Hapus</button></a></td>
+
+
+                                                
+                                            </tr>
                                            <?php 
                                            $no++;
-                                            include 'paging.php';
+                                       }
 
                                             ?>
                                         </tbody>
                                     </table>
-                                    
                                 </div>
                             </div>
-                            <ul class="pagination justify-content-center">
-                <li class="page-item">
-                    <a class="page-link" <?php if($halaman > 1){ echo "href='?halaman=$Previous'"; } ?>>Previous</a>
-                </li>
-                <?php 
-                for($x=1;$x<=$total_halaman;$x++){
-                    ?> 
-                    <li class="page-item"><a class="page-link" href="?halaman=<?php echo $x ?>"><?php echo $x; ?></a></li>
-                    <?php
-                }
-                ?>              
-                <li class="page-item">
-                    <a  class="page-link" <?php if($halaman < $total_halaman) { echo "href='?halaman=$next'"; } ?>>Next</a>
-                </li>
-            </ul>
-        
+                          
             <!-- Modal -->
 
             <!-- End Modal -->
@@ -1016,17 +901,7 @@ session_start();
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
-    <script type="text/javascript">
-    function validasi_input(form){
-    var maxcar = 5;
-    if (form.id_karyawan.value.length > mincar){
-    alert("Panjang NIP Maximal 5 Karater!");
-    form.username.focus();
-    return (false);
-    }
-   return (true);
-    }
+
 </body>
 
 </html>
-<!-- end document-->

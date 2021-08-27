@@ -77,6 +77,9 @@ session_start();
 
 
   <button type="submit" class="btn btn-primary" name="ubahdata">Ubah Data</button>
+  <?php 
+                                                $url = isset($_SERVER['HTTP_REFERER']) ? htmlspecialchars($_SERVER['HTTP_REFERER']) : ''; ?>
+                                                <a  class="btn btn-danger" href="<?=$url?>">Batal</a>
 </form>
 </body>
 </html>
