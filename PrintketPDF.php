@@ -5,8 +5,10 @@ $pdf = new FPDF('P', 'mm','A4');
 
 $pdf->AddPage();
 
-$pdf->SetFont('Times','B',16);
-$pdf->Cell(0,7,'Absen Keterangan',0,1,'C');
+$pdf->Date('d-m-Y H:i:s',25,5,27);
+$pdf->Image('img/logo.jpeg',25,5,27);
+$pdf->SetFont('Times','B',22);
+$pdf->Cell(0,7,'Laporan Absen Keterangan',0,1,'C');
 
 $pdf->Cell(10,7,'',0,1);
 

@@ -262,7 +262,7 @@ error_reporting(0);
                                            </tr>
 
                                             <tr>
-                                                <td><a href="?m=karyawan&s=edit&id_karyawan=<?php echo $id;?>">EDIT</a></td>
+                                                <td><a class="btn btn-warning" href="?m=karyawan&s=edit&id_karyawan=<?php echo $id;?>">EDIT</a></td>
                                                
                                             </tr>
                                             

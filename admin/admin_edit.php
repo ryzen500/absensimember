@@ -65,7 +65,9 @@ session_start();
 <form action="proedit_admin.php" method="POST" enctype="multipart/form-data">
   <div class="form-group">
     <label>Id</label>
-    <input type="number" class="form-control" readonly="" name="id" autocomplete="off" value="<?php echo $d['id'];?>">
+    <input type="text" value="<?php echo $d['id'];?>" class="form-control" id="id" maxlength="9" required="" pattern="^[A-Za-z0-9_]{1,5}$" autofocus required
+    oninvalid="this.setCustomValidity('Input Maximal 5 Character!')" name="id" autocomplete="off" size="25px" maxlength="25px"> 
+ 
   </div>
 
   <div class="form-group">
@@ -83,6 +85,41 @@ session_start();
 
 </form>
 <button  class="btn btn-danger" style="float:right; transform: translate(-1040px,-39px);" onclick="history.back();">cancel</button>
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js">
+    </script>
+
+    <!-- Main JS-->
+    <script src="js/main.js"></script>
+    <script type="text/javascript">
+    function validasi_input(form){
+    var maxcar = 5;
+    if (form.id.value.length > mincar){
+    alert("Panjang NIP Maximal 5 Karater!");
+    form.username.focus();
+    return (false);
+    }
+   return (true);
+    }
+</script>
 
 </body>
 </html>

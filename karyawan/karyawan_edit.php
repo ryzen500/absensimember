@@ -65,7 +65,8 @@ session_start();
 <form action="proedit_karyawan.php" method="POST" enctype="multipart/form-data">
   <div class="form-group">
     <label>NIP</label>
-  <input type="number" class="form-control" readonly="" name="id_karyawan" autocomplete="off" value="<?php echo $d['id_karyawan'];?>">
+    <input type="text" value="<?php echo $d['id_karyawan'];?>" class="form-control" id="nip" maxlength="9" required="" pattern="^[A-Za-z0-9_]{1,5}$" autofocus required
+    oninvalid="this.setCustomValidity('Input Maximal 5 Character!')" name="id_karyawan" autocomplete="off" size="25px" maxlength="25px"> 
   </div>
 
   <div class="form-group">
@@ -142,7 +143,7 @@ session_start();
     <label>Foto</label><br>
   <?php 
             if ($d['foto']!=''){
-                          echo "<img src=\"../images/$d[foto]\" height=150 />";  
+                          echo "<img src=\"../images/$d[foto]\" width='128px' height='128px'/>";  
                         }
                         else{
                           echo "tidak ada gambar";
@@ -160,6 +161,19 @@ session_start();
   <button type="submit" class="btn btn-primary" name="ubahdata">Ubah Data</button>
   <button type="submit" class="btn btn-warning"  name="ubahpassword">Ubah password</button>
 </form>
+    <!-- Main JS-->
+    <script src="js/main.js"></script>
+    <script type="text/javascript">
+    function validasi_input(form){
+    var maxcar = 5;
+    if (form.id_karyawan.value.length > mincar){
+    alert("Panjang NIP Maximal 5 Karater!");
+    form.username.focus();
+    return (false);
+    }
+   return (true);
+    }
+</script>
 </body>
 </html>
 
