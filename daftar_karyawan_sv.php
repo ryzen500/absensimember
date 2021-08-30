@@ -33,7 +33,7 @@ echo "<script>alert('Data Dengan NIP = ".$id_karyawan." sudah ada') </script>";
 
 }
 
-$query = "INSERT INTO tb_karyawan set id_karyawan='$id_karyawan', username='$username', password='$password', nama='$nama', tmp_tgl_lahir='$tmp_tgl_lahir', jenkel='$jenkel', agama='$agama', alamat='$alamat', no_tel='$no_tel', jabatan='$jabatan', foto='$fotobaru'";
+$query = "INSERT INTO tb_karyawan (id_karyawan,username,`password`,nama,tmp_tgl_lahir,jenkel,agama,alamat,no_tel,jabatan,foto) VALUES('$id_karyawan','$username','$password','$nama','$tmp_tgl_lahir','$jenkel','$agama','$alamat','$no_tel','$jabatan','$fotobaru')";
 $tambah = mysqli_query($koneksi, $query);
 
 if($tambah){

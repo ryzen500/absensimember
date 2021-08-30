@@ -31,7 +31,7 @@
           <input type="submit" value="Login">
 
         </form>
-        <a href="daftar_karyawan.php">register</a>
+        <a style="text-align:center;" href="daftar_karyawan.php" >register</a>
         
       </div>
     </div>

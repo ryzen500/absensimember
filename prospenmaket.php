@@ -307,7 +307,7 @@ session_start();
                                         <tbody>
                                             <?php 
                                             $cari_bulan = $_POST['cari_bulan'];
-                                            $sql = "SELECT * FROM tb_keterangan WHERE bulan LIKE '%$cari_bulan%' OR tahun LIKE '%$cari_bulan%'";
+                                            $sql = "SELECT * FROM tb_keterangan WHERE cari_waktu LIKE '%$cari_bulan%' OR cari_waktu LIKE '%$cari_bulan%'";
                                             $query = mysqli_query($koneksi, $sql);
 
                                             $no = 1;

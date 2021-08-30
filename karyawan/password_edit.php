@@ -78,8 +78,9 @@ session_start();
   </div>
 
   <button type="submit" id="btnSubmit"  class="btn btn-primary"  name="berubah">Save New Password</button>
-  <a href="../datakaryawan.php"><button class="btn btn-warning">Cancel</button></a>
 </form>
+<a href="index.php"><button style="transform:translate(240%,-102%);" class="btn btn-warning">Cancel</button></a>
+
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript">
         $(function () {
