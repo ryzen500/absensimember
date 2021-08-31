@@ -75,11 +75,6 @@ session_start();
    </div>
 
   <div class="form-group">
-    <label>password</label>
-  <input type="password" class="form-control" readonly="" name="password" autocomplete="off"  value="<?php echo $d['password'];?>">
-  </div>
-
-  <div class="form-group">
     <label>Nama</label>
     <input type="text" class="form-control" name="nama" autocomplete="off" value="<?php echo $d['nama'];?>">
   </div>

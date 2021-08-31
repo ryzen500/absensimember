@@ -79,8 +79,10 @@ session_start();
 
   <button type="submit" id="btnSubmit"  class="btn btn-primary"  name="berubah">Save New Password</button>
 
+
 </form>
 <button  class="btn btn-danger" style="float:right; transform: translate(-1097px, -38px);"onclick="history.back();">cancel</button>
+
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript">
         $(function () {

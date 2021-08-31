@@ -209,7 +209,10 @@ error_reporting(0);
                                             <tr>
                                                 <td>NIP</td>
                                                 <td>
+                                                <input type="number" value="<?php echo $r['id_karyawan'];?>" class="form-control" maxlength="9" required="" pattern="^[A-Za-z0-9_]{1,5}$" autofocus required>
+
                                                 <input type="text" value="<?php echo $r['id_karyawan'];?>" class="form-control" id="nip" maxlength="9" required="" pattern="^[A-Za-z0-9_]{1,5}$" autofocus required
+
                                                 oninvalid="this.setCustomValidity('Input Maximal 5 Character!')" name="id_karyawan" autocomplete="off" size="25px" maxlength="25px"> 
  
                                                 
@@ -231,12 +234,7 @@ error_reporting(0);
                                                 	</td>
                                             </tr>
 
-                                            <tr>
-                                                <td>Password</td>
-                                                <td>
-                                                	<input type="password" name="password" readonly="" value="<?php echo $r['password'];?>">
-                                                	</td>
-                                            </tr>
+                                           
 
                                              
                                             
@@ -382,16 +380,16 @@ error_reporting(0);
 
     <!-- Main JS-->
     <script src="js/main.js">
-    <script type="text/javascript">
-    function validasi_input(form){
-    var maxcar = 5;
-    if (form.id_karyawan.value.length > mincar){
-    alert("Panjang NIP Maximal 5 Karater!");
-    form.username.focus();
-    return (false);
-    }
-   return (true);
-    }</script>
+//     <script type="text/javascript">
+//     function validasi_input(form){
+//     var maxcar = 5;
+//     if (form.id_karyawan.value.length > mincar){
+//     alert("Panjang NIP Maximal 5 Karater!");
+//     form.username.focus();
+//     return (false);
+//     }
+//    return (true);
+//     }</script>
 
 </body>
 

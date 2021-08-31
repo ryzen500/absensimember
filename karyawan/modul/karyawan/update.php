@@ -32,7 +32,7 @@ if (isset($_POST['simpan'])) {
       unlink($file);//nama variabel yang ada di server
 
       // Proses ubah data ke Database
-      $sql_f = "UPDATE tb_karyawan set username='$username', password='$password', nama='$nama', tmp_tgl_lahir='$tmp_tgl_lahir', jenkel='$jenkel', agama='$agama', alamat='$alamat', no_tel='$no_tel', jabatan='$jabatan', foto ='$fotobaru' WHERE id_karyawan='$id_karyawan'";
+      $sql_f = "UPDATE tb_karyawan set username='$username', nama='$nama', tmp_tgl_lahir='$tmp_tgl_lahir', jenkel='$jenkel', agama='$agama', alamat='$alamat', no_tel='$no_tel', jabatan='$jabatan', foto ='$fotobaru' WHERE id_karyawan='$id_karyawan'";
       $ubah  = mysqli_query($koneksi, $sql_f);
       if($ubah){
         echo "<script>alert('Ubah Data Dengan ID Karyawan = ".$id_karyawan." Berhasil') </script>";
@@ -54,7 +54,7 @@ if (isset($_POST['simpan'])) {
     }
  } //akhir ubah foto
  else { //hanya untuk mengubah data
-   $sql_d   = "UPDATE tb_karyawan set username='$username', password='$password', nama='$nama', tmp_tgl_lahir='$tmp_tgl_lahir', jenkel='$jenkel', agama='$agama', alamat='$alamat', no_tel='$no_tel', jabatan='$jabatan' WHERE id_karyawan='$id_karyawan'";
+   $sql_d   = "UPDATE tb_karyawan set username='$username', nama='$nama', tmp_tgl_lahir='$tmp_tgl_lahir', jenkel='$jenkel', agama='$agama', alamat='$alamat', no_tel='$no_tel', jabatan='$jabatan' WHERE id_karyawan='$id_karyawan'";
    $data    = mysqli_query($koneksi, $sql_d);
    if ($data) {
      echo "<script>alert('Ubah Data Dengan ID Karyawan = ".$id_karyawan." Berhasil') </script>";

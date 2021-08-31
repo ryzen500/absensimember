@@ -1,13 +1,13 @@
 <?php
-session_start();
-error_reporting(0);
+// session_start();
+// error_reporting(0);
 include '../koneksi.php';
 
 //proses input
 if (isset($_POST['ubahdata'])) {
   $id_karyawan = $_POST['id_karyawan'];
   $username = $_POST['username'];
-  // $password = md5($_POST['password']);
+  $password = md5($_POST['password']);
   $nama = $_POST['nama'];
   $tmp_tgl_lahir = $_POST['tmp_tgl_lahir'];
   $jenkel = $_POST['jenkel'];
@@ -33,10 +33,11 @@ if (isset($_POST['ubahdata'])) {
 
       // Proses ubah data ke Database
       $sql_f = "UPDATE tb_karyawan set username='$username', nama='$nama', tmp_tgl_lahir='$tmp_tgl_lahir', jenkel='$jenkel', agama='$agama', alamat='$alamat', no_tel='$no_tel', jabatan='$jabatan', foto ='$fotobaru' WHERE id_karyawan='$id_karyawan'";
+     var_dump($sql_f);
       $ubah  = mysqli_query($koneksi, $sql_f);
       if($ubah){
         echo "<script>alert('Ubah Data Dengan ID Karyawan = ".$id_karyawan." Berhasil') </script>";
-        echo "<script>window.location.href = \"../datakaryawan.php\" </script>";
+        echo "<script>window.location.href = \"index.php\" </script>";
       } else {
         $sql    = "SELECT * FROM tb_karyawan WHERE id_karyawan = '".$id_karyawan."' ";
         $query  = mysqli_query($koneksi, $sql);
@@ -73,11 +74,12 @@ if (isset($_POST['ubahdata'])) {
 if(isset($_POST['ubahpassword'])){
   $id_karyawan = $_POST['id_karyawan'];
   // var_dump($id_karyawan);
-  echo "<script> var yakin =confirm('yakin ingin Mengubah Password ??');
-    if(yakin){
-      window.location = 'password_edit.php?id_karyawan=$id_karyawan';
+  echo "<script> var yakin =confirm('yakin ingin Mengubah Kata Sandi ??');
+    if(yakin == true){
+     
+      alert('TODO');
     }else {
-    document.location = 'karyawan_edit.php?id_karyawan=$id_karyawan';
+      alert('TODO');
     }
   
   </script>";
@@ -99,7 +101,7 @@ if(isset($_POST['berubah'])){
       var_dump($ubah); 
       if($ubah){
         echo "<script>alert('Ubah Data Dengan ID Karyawan = ".$id_karyawan." Berhasil') </script>";
-        echo "<script>window.location.href = '../datakaryawan.php' </script>";
+        echo "<script>window.location.href = 'index.php' </script>";
       }
       else {
         $sql    = "SELECT * FROM tb_karyawan WHERE id_karyawan = '".$id_karyawan."' ";
