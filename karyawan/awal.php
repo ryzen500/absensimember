@@ -80,9 +80,10 @@ error_reporting(0);
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
-                <a href="#">
-<h1>karyawan</h1>
-                </a>
+            <h1>
+                <i class="fas fa-users"></i>
+                <span>Beta 1.0</span>
+            </h1>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
@@ -106,6 +107,7 @@ error_reporting(0);
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="header-wrap">
+                            <h1>Karyawan</h1>
                             <form class="form-header" action="" method="POST">
                                 <!-- <input class="au-input au-input--xl" type="text" name="search" value="Absen Karyawan" readonly="" />
                                  -->
@@ -227,13 +229,12 @@ error_reporting(0);
                                                 <td>Cari Tahun</td>
                                                 <td><input readonly="" type="text" class="form-control" value="<?php echo date('Y' ); ?>" name="tahun"></td>
                                             </tr>
-                                           <tr>
-                                              
-                                           </tr>
 
                                             <tr>
                                                 <td><button type="submit" name="simpan" class="btn btn-primary">Absen</button></td>
-                                                
+                                                <td>
+                                               <a href="?m=karyawan&s=title"><button class="btn btn-warning">Klik Tombol ini jika tidak hadir / absen</button></a>
+                                            </td>
                                             </tr>
                                             
                                       </tbody>
@@ -243,31 +244,6 @@ error_reporting(0);
                                     
                                 </div>    
                         </div>
-                     <div class="row">
-                           <div class="table-responsive table--no-card m-b-30">
-
-                                
-                                <table class="table table-borderless table-striped table-earning" >
-                                        
-                                        <tbody>
-                                            <tr>
-                                               
-                                                <td>
-                                                
-                                               <a href="?m=karyawan&s=title"><button class="btn btn-warning">Klik Tombol ini jika tidak hadir / absen</button></a>
-                                            </td>
-                                            </tr>
-                                           
-                                           
-                                            
-                                      </tbody>
-                                    </table>
-                                       
-                            
-                                    
-                                </div>    
-                        </div>
-
                         <!-- END FORM -->
                         
                         <div class="header-desktop">

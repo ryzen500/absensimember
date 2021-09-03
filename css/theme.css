@@ -1234,6 +1234,7 @@ section {
 @media (max-width: 991px) {
     .logo {
         text-align: center;
+        font-size: 90px;
     }
 }
 
