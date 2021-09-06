@@ -326,7 +326,10 @@ error_reporting(0);
                    
 
                                             <tr>
-                                                <td><input type="submit" name="simpan" class="btn btn-success" value="Proses"></td>
+                                                <td>
+                                                    <input type="submit" name="simpan" class="btn btn-success" value="Proses">
+                                                    <input type="submit" name="Batal" class="btn btn-danger" href="<?=$url?>" value="Batal">
+                                                </td>
                                                <td><button type="submit" class="btn btn-warning"  name="ubahpassword">Ubah password</button></td>
                                             </tr>
                                             
