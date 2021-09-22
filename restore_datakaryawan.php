@@ -1,6 +1,7 @@
-<?php 
+<?php
+error_reporting(0); 
 require_once("koneksi.php");
-error_reporting(0);
+session_start();
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +21,7 @@ error_reporting(0);
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Data Jabatan</title>
+    <title>Data Karyawan</title>
 
     <!-- Fontfaces CSS-->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="all">
@@ -67,7 +68,7 @@ error_reporting(0);
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                           
+                            <img src="images/icon/logo.png" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -91,12 +92,10 @@ error_reporting(0);
                             <a href="datakaryawan.php">
                                 <i class="fas fa-chart-bar"></i>Data Karyawan</a>
                         </li>
-                        
                         <li>
                             <a href="Back_datakaryawan.php">
-                                <i class="fas fa-chart-bar"></i>Backup Data Karyawan </a>
+                                <i class="fas fa-chart-bar"></i>Backup Data Karyawan</a>
                         </li>
-
                         <li>
                             <a href="datauser.php">
                                 <i class="fas fa-table"></i>Data user</a>
@@ -126,7 +125,7 @@ error_reporting(0);
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                   <h1>admin</h1>
+                    <h2>Admin</h2>
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -137,15 +136,19 @@ error_reporting(0);
                                 <i class="fas fa-tachometer-alt"></i>Beranda</a>
                           
                         </li>
-                        <li>
+                          <li class="active">
                             <a href="datakaryawan.php">
                                 <i class="fas fa-chart-bar"></i>Data Karyawan</a>
+                        </li>
+                        <li>
+                            <a href="Back_datakaryawan.php">
+                                <i class="fas fa-chart-bar"></i>Backup Data Karyawan </a>
                         </li>
                         <li>
                             <a href="datauser.php">
                                 <i class="fas fa-table"></i>Data User</a>
                         </li>
-                        <li class="active has-sub">
+                        <li>
                             <a href="datajabatan.php">
                                 <i class="far fa-check-square"></i>Data Jabatan</a>
                         </li>
@@ -155,8 +158,7 @@ error_reporting(0);
                         </li>
                         <li>
                             <a href="data_keterangan.php">
-                                <i class="fas fa-table"></i>data Keterangan
-                            </a>
+                                <i class="fas fa-map-marker-alt"></i>Data Keterangan</a>
                         </li>
                         <!--<li>
                             <a href="map.html">
@@ -233,6 +235,10 @@ error_reporting(0);
                     <div class="container-fluid">
                         <div class="header-wrap">
                            
+                       
+                            <div class="header-button">
+                                
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -246,23 +252,13 @@ error_reporting(0);
                     <div class="container-fluid">
                         <div class="row">
                            <div class="table-responsive table--no-card m-b-30">
-                            <form action="jabatan_sv.php" method="post">
+                            <form action="restore.php" enctype="multipart/form-data" method="post">
                                 <div class="form-group">
                                 <table class="table table-borderless table-striped table-earning" >
                                         
-                                        <tbody>
+                                <input type="file" name="datafile">
                                             <tr>
-                                                <td>Jabatan</td>
-                                                <td>
-                                                
-                                                <input type="text" class="form-control" name="jabatan" autocomplete="off">    
-                                                
-                                            </td>
-                                            </tr>
-                                           
-                                            <tr>
-                                                <td><button type="submit" name="simpan" class="btn btn-primary">Simpan</button></td>
-                                                <td><input type="reset" name="" value="Batal" class="btn btn-danger"></td>
+                                                <td><button type="submit" name="kembalikan" style="transform:translate(210%,-10%);" class="btn btn-warning" onclick="return confirm('Apakah Anda Yakin akan restore database');"> Restore File Database </button></td>
                                             </tr>
                                             
                                       </tbody>
@@ -272,52 +268,8 @@ error_reporting(0);
                                     
                                 </div>    
                         </div>
-
-                        <div class="row">
-
-                                <div class="table-responsive table--no-card m-b-30">
-                                    <table class="table table-borderless table-striped table-earning">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Jabatan</th>
-                                                <th>Aksi</th>
-                                                
-                                            </tr>
-                                        </thead>
-                                        <?php 
-                                            include 'koneksi.php';
-                                            $sql = "SELECT * FROM tb_jabatan";
-                                            $query = mysqli_query($koneksi, $sql);
-
-                                            $no = 1;
-                                            while ($row = mysqli_fetch_array($query)) {
-                                                
-                                            
-                                         ?>
-                                        <tbody>
-                                            <tr>
-                                                <td><?php echo $no ?></td>
-                                                <td><?php echo $row['jabatan']; ?></td>
-                                                
-                                                    
-
-                                                </td>
-                                                <td> <a href="jabatan_edit.php?id=<?php echo $row['id']; ?>"><button class="btn btn-primary">Edit</button></a> <a href="hapus_jabatan.php?id=<?php echo $row['id']; ?>"><button class="btn btn-danger" onclick="return confirm('yakin ingin dihapus?');">Hapus</button></a></td>
-
-
-                                                
-                                            </tr>
-                                           <?php 
-                                           $no++;
-                                       }
-
-                                            ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                          
+                                   
+        
             <!-- Modal -->
 
             <!-- End Modal -->
@@ -884,7 +836,17 @@ error_reporting(0);
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
-
+    <script type="text/javascript">
+    function validasi_input(form){
+    var maxcar = 5;
+    if (form.id_karyawan.value.length > mincar){
+    alert("Panjang NIP Maximal 5 Karater!");
+    form.username.focus();
+    return (false);
+    }
+   return (true);
+    }
+    </script>
 </body>
 
 </html>

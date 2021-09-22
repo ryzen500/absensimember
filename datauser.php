@@ -91,6 +91,13 @@ error_reporting(0);
                             <a href="datakaryawan.php">
                                 <i class="fas fa-chart-bar"></i>Data Karyawan</a>
                         </li>
+
+                        <li>
+                            <a href="Back_datakaryawan.php">
+                                <i class="fas fa-chart-bar"></i>Backup Data Karyawan </a>
+                        </li>
+
+
                         <li>
                             <a href="datauser.php">
                                 <i class="fas fa-table"></i>Data user</a>
@@ -896,18 +903,18 @@ error_reporting(0);
 
     <!-- Main JS-->
     <script src="js/main.js">
-    <script type="text/javascript">
-    function validasi_input(form){
-    var maxcar = 5;
-    if (form.id_karyawan.value.length > mincar){
-    alert("Panjang NIP Maximal 5 Karater!");
-    form.username.focus();
-    return (false);
-    }
-   return (true);
-    }</script>
+//     <script type="text/javascript">
+// //     function validasi_input(form){
+// //     var maxcar = 5;
+// //     if (form.id_karyawan.value.length > mincar){
+// //     alert("Panjang NIP Maximal 5 Karater!");
+// //     form.username.focus();
+// //     return (false);
+    
+// //    return (true);
+// // }</script>
 
-
+// </script>
 </body>
 
 </html>
