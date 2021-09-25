@@ -12,6 +12,12 @@
 <!-- web font -->
 <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
 <!-- //web font -->
+
+<style>
+  .test{
+    text-align: center;
+  }
+</style>
 </head>
 <body>
   <!-- main -->
@@ -31,7 +37,7 @@
           <input type="submit" value="Login">
 
         </form>
-        <a style="text-align:center;" href="daftar_karyawan.php" >register</a>
+        <a href="daftar_karyawan.php">register</a>
         
       </div>
     </div>
