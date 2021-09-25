@@ -328,7 +328,9 @@ error_reporting(0);
                                             <tr>
                                                 <td>
                                                     <input type="submit" name="simpan" class="btn btn-success" value="Proses">
-                                                    <input type="submit" name="Batal" class="btn btn-danger" href="<?=$url?>" value="Batal">
+                                                  
+                                                    <!-- <input type="submit" name="Batal" class="btn btn-danger" onclick="history.back();" value="Batal"> -->
+
                                                 </td>
                                                <td><button type="submit" class="btn btn-warning"  name="ubahpassword">Ubah password</button></td>
                                             </tr>
@@ -337,7 +339,7 @@ error_reporting(0);
                                     </table>
                                         </div>
                             </form>
-                                    
+                            <button  type="submit" name="Batal" style="transform: translate(220%,-180%);" class="btn btn-danger" ><a href="index.php?m=karyawan&s=profil" style="color: white;">Batal</a></button>
                                 </div>    
                         </div>
                      
