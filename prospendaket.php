@@ -308,6 +308,8 @@ session_start();
                                             <?php 
                                             $cari2 = $_POST['cari2'];
                                             $sql = "SELECT * FROM tb_keterangan WHERE cari_waktu LIKE '%$cari2%'";
+                                            // $cari_bulan = $_POST['cari_bulan'];
+                                            // $sql3 = "SELECT * FROM tb_keterangan WHERE cari_waktu LIKE '%$cari_bulan%' OR cari_waktu LIKE '%$cari_bulan%'";
                                             $query = mysqli_query($koneksi, $sql);
 
                                             $no = 1;
