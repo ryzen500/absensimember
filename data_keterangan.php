@@ -248,16 +248,14 @@ session_start();
                                         <div class="account-dropdown js-dropdown">
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                    <a href="PrintketPDF.php" target="blank">
+                                                    <a href="Printket.php" target="blank">
                                                       <i class="far fa-file-pdf"></i>Export PDF</a>
                                                 </div>
                                                 <div class="account-dropdown__footer">
-                                                <a href="printketExcel.php" target="blank">
+                                                <a href="prosketExcel.php" target="blank">
                                                 <i class="far fa-file-excel"></i>Export Excel</a>
                                                 </div>
-                                                <div class="account-dropdown__footer">
-                                                <a href="printket.php" target="blank">
-                                                <i class="fas fa-print"></i>Print Data</a>
+                                                <div class="account-dropdown__footer">                                       
                                                 </div>
                                             </div>
                                         </div>
