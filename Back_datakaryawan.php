@@ -93,7 +93,7 @@ session_start();
                                 <i class="fas fa-chart-bar"></i>Data Karyawan</a>
                         </li>
                         <li>
-                            <a href="Backup_datakaryawan.php">
+                            <a href="Back_datakaryawan.php">
                                 <i class="fas fa-chart-bar"></i>Backup Data Karyawan</a>
                         </li>
                         <li>
@@ -141,10 +141,9 @@ session_start();
                                 <i class="fas fa-chart-bar"></i>Data Karyawan</a>
                         </li>
                         <li>
-                            <a href="Backup_datakaryawan.php">
-                                <i class="fas fa-chart-bar"></i>Backup Data Karyawan</a>
+                            <a href="Back_datakaryawan.php">
+                                <i class="fas fa-chart-bar"></i>Backup Data Karyawan </a>
                         </li>
-                        <li>
                         <li>
                             <a href="datauser.php">
                                 <i class="fas fa-table"></i>Data User</a>
@@ -236,12 +235,7 @@ session_start();
                     <div class="container-fluid">
                         <div class="header-wrap">
                            
-                             <form class="form-header" action="prospenkar.php" method="POST">
-                                <input class="au-input au-input--xl" autocomplete="off" type="text" name="cari" placeholder="Cari ID atau nama karyawan" />
-                                <button class="au-btn--submit" type="submit">
-                                    <i class="zmdi zmdi-search"></i>
-                                </button>
-                            </form>
+                       
                             <div class="header-button">
                                 
                             </div>
@@ -256,57 +250,25 @@ session_start();
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
-                    <?php
-    // error_reporting(0);
-    $file=date("Ymd").'_backup_database_'.time().'.sql';
-    backup_tables("localhost","root","","karyawansi",$file);
-?>
-<h1>hello</h1>
-<p align="center">Backup database telah berhasil !</p><br />
-<p align="center"><a style="cursor:pointer" onclick="location.href='download_backup_data.php?nama_file=<?php echo $file;?>'" title="Download">Download file database</a></p>
-<?php
-    function backup_tables($host,$user,$pass,$name,$nama_file,$tables ='*')    {
-    $link = mysql_connect($host,$user,$pass);
-    mysql_select_db($name,$link);
-    if($tables == '*'){
-        $tables = array();
-        $result = mysql_query('SHOW TABLES');
-        while($row = mysql_fetch_row($result)){
-            $tables[] = $row[0];
-        }
-    }
-    else{
-        $tables = is_array($tables) ? $tables : explode(',',$tables);
-    }
-    foreach($tables as $table){
-        $result = mysql_query('SELECT * FROM '.$table);
-        $num_fields = mysql_num_fields($result);
-        $return.= 'DROP TABLE '.$table.';';
-        $row2 = mysql_fetch_row(mysql_query('SHOW CREATE TABLE '.$table));
-        $return.= "\n\n".$row2[1].";\n\n";
-            for ($i = 0; $i < $num_fields; $i++) {
-                while($row = mysql_fetch_row($result)){
-                $return.= 'INSERT INTO '.$table.' VALUES(';
-                for($j=0; $j < $num_fields; $j++) {
-                    $row[$j] = addslashes($row[$j]);
-                    $row[$j] = ereg_replace("\n","\\n",$row[$j]);
-                    if (isset($row[$j])) { $return.= '"'.$row[$j].'"' ; } else { $return.= '""'; }
-                    if ($j < ($num_fields-1)) { $return.= ','; }
-                }
-                $return.= ");\n";
-                }
-            }
-            $return.="\n\n\n";
-        }                            
-        $nama_file;
-        $handle = fopen('./pages/backup-restore/backup/'.$nama_file,'w+');
-        fwrite($handle,$return);
-            fclose($handle);
-    }
-?>
-                      
-                       
-
+                        <div class="row">
+                           <div class="table-responsive table--no-card m-b-30">
+                            <form action="#" enctype="multipart/form-data" method="post">
+                                <div class="form-group">
+                                <table class="table table-borderless table-striped table-earning" >
+                                        
+                            
+                                            <tr>
+                                                <td><button type="submit" name="simpan" style="transform:translate(210%,-10%);" class="btn btn-primary"><a href="Backup_datakaryawan.php" style="color: white;"> Download File Database</a> </button></td>
+                                            </tr>
+                                            
+                                      </tbody>
+                                    </table>
+                                        </div>
+                            </form>
+                                    
+                                </div>    
+                        </div>
+                                   
         
             <!-- Modal -->
 
@@ -884,6 +846,7 @@ session_start();
     }
    return (true);
     }
+    </script>
 </body>
 
 </html>

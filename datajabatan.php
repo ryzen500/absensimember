@@ -91,6 +91,12 @@ error_reporting(0);
                             <a href="datakaryawan.php">
                                 <i class="fas fa-chart-bar"></i>Data Karyawan</a>
                         </li>
+                        
+                        <li>
+                            <a href="Back_datakaryawan.php">
+                                <i class="fas fa-chart-bar"></i>Backup Data Karyawan </a>
+                        </li>
+
                         <li>
                             <a href="datauser.php">
                                 <i class="fas fa-table"></i>Data user</a>

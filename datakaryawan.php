@@ -144,6 +144,13 @@ session_start();
                             <a href="Back_datakaryawan.php">
                                 <i class="fas fa-chart-bar"></i>Backup Data Karyawan </a>
                         </li>
+
+                        <li>
+                            <a href="restore_datakaryawan.php">
+                                <i class="fas fa-chart-bar"></i>Restore Data Karyawan </a>
+                        </li>
+
+
                         <li>
                             <a href="datauser.php">
                                 <i class="fas fa-table"></i>Data User</a>
@@ -1026,6 +1033,7 @@ session_start();
     }
    return (true);
     }
+    </script>
 </body>
 
 </html>

@@ -75,10 +75,10 @@ if(isset($_POST['ubahpassword'])){
   $id_karyawan = $_POST['id_karyawan'];
   // var_dump($id);
   echo "<script> var yakin =confirm('yakin ingin Mengubah Password ??');
-    if(yakin){
+    if(yakin == true){
       window.location = 'password_edit.php?id_karyawan=$id_karyawan';
     }else {
-    document.location = 'edit.php?id_karyawan=$id_karyawan';
+    document.location = 'index.php?m=karyawan&s=edit&id_karyawan=$id_karyawan';
     }
   
   </script>";

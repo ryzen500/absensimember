@@ -229,18 +229,8 @@ session_start();
                         <div class="header-wrap">
                             <form class="form-header" action="prospenket.php" method="POST">
                                 <input autocomplete="off" class="au-input au-input--xl" type="text" name="cari" placeholder="Cari ID atau nama karyawan"  value="<?php if(isset($_POST['cari'])) echo $_POST['cari'];?>"/>
-                                <button class="au-btn--submit" type="submit">
-                                    <i class="zmdi zmdi-search"></i>
-                                </button>
-                            </form>
-                            <form class="form-header" action="prospendaket.php" method="POST">
                                 <input class="au-input au-input--l" autocomplete="off" type="date" name="cari_waktu" placeholder="cari waktu" value="<?php if(isset($_POST['cari_waktu'])) echo $_POST['cari_waktu'];?>"/>
-                                <button class="au-btn--submit" type="submit">
-                                    <i class="zmdi zmdi-search"></i>
-                                </button> </form>
-
-                                <form class="form-header" action="prospenmaket.php" method="POST">
-                                <input class="au-input au-input--l" autocomplete="off" type="text" name="cari_bulan" placeholder="cari bulan" value="<?php if(isset($_POST['cari_bulan'])) echo $_POST['cari_bulan'];?>"/>
+                                <input class="au-input au-input--l" autocomplete="off" type="text" name="cari_bulan" placeholder="cari bulan" value="<?php if(isset($_POST['cari_bulan'])) echo $_POST['cari_bulan']; // echo $_POST['cari']; echo $_POST['cari_waktu'];?>"/>
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
                                 </button> </form>
@@ -253,16 +243,14 @@ session_start();
                                         <div class="account-dropdown js-dropdown">
                                             <div class="account-dropdown__body">
                                             <div class="account-dropdown__item">
-                                                    <a href="PrintketPDF.php" target="blank">
+                                                    <a href="Printket.php" target="blank">
                                                       <i class="far fa-file-pdf"></i>Export PDF</a>
                                                 </div>
                                                 <div class="account-dropdown__footer">
-                                                <a href="printketExcel.php" target="blank">
+                                                <a href="prosketExcel.php" target="blank">
                                                 <i class="far fa-file-excel"></i>Export Excel</a>
                                                 </div>
                                                 <div class="account-dropdown__footer">
-                                                <a href="printket.php" target="blank">
-                                                <i class="fas fa-print"></i>Print Data</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -308,8 +296,13 @@ session_start();
                                         <tbody>
                                             <?php 
                                             $cari = $_POST['cari'];
-                                            $sql = "SELECT * FROM tb_keterangan WHERE id_karyawan LIKE '%$cari%' OR nama LIKE '%$cari%'";
-                                            $query = mysqli_query($koneksi, $sql);
+                                            $cari2 = $_POST['cari2'];
+                                            $cari_bulan = $_POST['cari_bulan'];
+                                            // $sql = "SELECT * FROM tb_keterangan WHERE cari_waktu LIKE '%$cari2%'";
+                                            $sql = "SELECT * FROM tb_keterangan WHERE id_karyawan LIKE '%$cari%' OR nama LIKE '%$cari%' AND  cari_waktu LIKE '%$cari_bulan%' AND  cari_waktu LIKE '%$cari2%'";
+                                          
+                                            // $sql3 = "SELECT * FROM tb_keterangan WHERE cari_waktu LIKE '%$cari_bulan%' OR cari_waktu LIKE '%$cari_bulan%'";
+                                            $query = mysqli_query($koneksi, $sql );
 
                                             $no = 1;
 

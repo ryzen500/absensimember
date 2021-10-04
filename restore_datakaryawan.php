@@ -21,7 +21,7 @@ session_start();
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Data Keterangan</title>
+    <title>Data Karyawan</title>
 
     <!-- Fontfaces CSS-->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="all">
@@ -44,11 +44,6 @@ session_start();
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
-
-      <!-- datetime-picker-24 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
-
     <!-- Script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -72,8 +67,8 @@ session_start();
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="admin2.php">
-                            <h1>admin</h1>
+                        <a class="logo" href="index.html">
+                            <img src="images/icon/logo.png" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -85,7 +80,7 @@ session_start();
             </div>
             <nav class="navbar-mobile">
                 <div class="container-fluid">
-                    <ul class="navbar-mobile__list list-unstyled">
+                   <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
                             <a class="js-arrow" href="admin2.php">
                                 <i class="fas fa-tachometer-alt"></i>Beranda</a>
@@ -96,6 +91,10 @@ session_start();
                         <li>
                             <a href="datakaryawan.php">
                                 <i class="fas fa-chart-bar"></i>Data Karyawan</a>
+                        </li>
+                        <li>
+                            <a href="Back_datakaryawan.php">
+                                <i class="fas fa-chart-bar"></i>Backup Data Karyawan</a>
                         </li>
                         <li>
                             <a href="datauser.php">
@@ -126,7 +125,7 @@ session_start();
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                  <h1>admin</h1>
+                    <h2>Admin</h2>
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -137,9 +136,13 @@ session_start();
                                 <i class="fas fa-tachometer-alt"></i>Beranda</a>
                           
                         </li>
-                        <li>
+                          <li class="active">
                             <a href="datakaryawan.php">
                                 <i class="fas fa-chart-bar"></i>Data Karyawan</a>
+                        </li>
+                        <li>
+                            <a href="Back_datakaryawan.php">
+                                <i class="fas fa-chart-bar"></i>Backup Data Karyawan </a>
                         </li>
                         <li>
                             <a href="datauser.php">
@@ -153,8 +156,9 @@ session_start();
                             <a href="data_absen.php">
                                 <i class="fas fa-calendar-alt"></i>Data Absen</a>
                         </li>
-                        <li class="active has-sub">
-                            <a href="data_keterangan.php"><i class="fas fa-table"></i>Data Keterangan</a>
+                        <li>
+                            <a href="data_keterangan.php">
+                                <i class="fas fa-map-marker-alt"></i>Data Keterangan</a>
                         </li>
                         <!--<li>
                             <a href="map.html">
@@ -231,37 +235,7 @@ session_start();
                     <div class="container-fluid">
                         <div class="header-wrap">
                            
-                          
-                        <form class="form-header" action="prospenket.php" method="POST">
-                                <input autocomplete="off" class="au-input au-input--xl" type="text" name="cari" placeholder="Cari ID atau nama karyawan"  value="<?php if(isset($_POST['cari'])) echo $_POST['cari'];?>"/>
-                                <input class="au-input au-input--l" autocomplete="off" type="date" name="cari_waktu" placeholder="cari waktu" value="<?php if(isset($_POST['cari_waktu'])) echo $_POST['cari_waktu'];?>"/>
-                                <input class="au-input au-input--l" autocomplete="off" type="text" name="cari_bulan" placeholder="cari bulan" value="<?php if(isset($_POST['cari_bulan'])) echo $_POST['cari_bulan']; // echo $_POST['cari']; echo $_POST['cari_waktu'];?>"/>
-                                <button class="au-btn--submit" type="submit">
-                                    <i class="zmdi zmdi-search"></i>
-                                </button> </form>
-
-                                <div class="account-wrap">
-                                    <div class="account-item clearfix js-item-menu">
-                                        <div class="icon">
-                                            <a class="js-acc-btn" href="#"><i class="fas fa-bars"></i></a>
-                                        </div>
-                                        <div class="account-dropdown js-dropdown">
-                                            <div class="account-dropdown__body">
-                                                <div class="account-dropdown__item">
-                                                    <a href="Printket.php" target="blank">
-                                                      <i class="far fa-file-pdf"></i>Export PDF</a>
-                                                </div>
-                                                <div class="account-dropdown__footer">
-                                                <a href="prosketExcel.php" target="blank">
-                                                <i class="far fa-file-excel"></i>Export Excel</a>
-                                                </div>
-                                                <div class="account-dropdown__footer">                                       
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
+                       
                             <div class="header-button">
                                 
                             </div>
@@ -276,60 +250,25 @@ session_start();
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
-                        
                         <div class="row">
-
-                                <div class="table-responsive table--no-card m-b-30">
-                                    <table class="table table-borderless table-striped table-earning">
-                                        <thead>
+                           <div class="table-responsive table--no-card m-b-30">
+                            <form action="restore.php" enctype="multipart/form-data" method="post">
+                                <div class="form-group">
+                                <table class="table table-borderless table-striped table-earning" >
+                                        
+                                <input type="file" name="datafile">
                                             <tr>
-                                <th>no</th>   
-                                 <th>id karyawan</th>
-                                 <th>Nama</th>
-                                 <th>keterangan</th>
-                                 <th class="text-right">alasan</th>
-                                 <th class="text-right">waktu</th>
-                                 <th>bukti</th>
-                               
-                                <th>Aksi</th>
-                                                
+                                                <td><button type="submit" name="kembalikan" style="transform:translate(210%,-10%);" class="btn btn-warning" onclick="return confirm('Apakah Anda Yakin akan restore database');"> Restore File Database </button></td>
                                             </tr>
-                                        </thead>
-                                        <?php 
                                             
-
-                                            $no = 1;
-                                          
-                                                
-                                            
-                                         ?>
-                                        <tbody>
-                                           
-                                           <?php 
-                                           $no++;
-                                            include 'paging_ket.php';
-
-                                            ?>
-                                        </tbody>
+                                      </tbody>
                                     </table>
+                                        </div>
+                            </form>
                                     
-                                </div>
-                            </div>
-                            <ul class="pagination justify-content-center">
-                <li class="page-item">
-                    <a class="page-link" <?php if($halaman > 1){ echo "href='?halaman=$Previous'"; } ?>>Previous</a>
-                </li>
-                <?php 
-                for($x=1;$x<=$total_halaman;$x++){
-                    ?> 
-                    <li class="page-item"><a class="page-link" href="?halaman=<?php echo $x ?>"><?php echo $x; ?></a></li>
-                    <?php
-                }
-                ?>              
-                <li class="page-item">
-                    <a  class="page-link" <?php if($halaman < $total_halaman) { echo "href='?halaman=$next'"; } ?>>Next</a>
-                </li>
-            </ul>
+                                </div>    
+                        </div>
+                                   
         
             <!-- Modal -->
 
@@ -897,7 +836,17 @@ session_start();
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
-
+    <script type="text/javascript">
+    function validasi_input(form){
+    var maxcar = 5;
+    if (form.id_karyawan.value.length > mincar){
+    alert("Panjang NIP Maximal 5 Karater!");
+    form.username.focus();
+    return (false);
+    }
+   return (true);
+    }
+    </script>
 </body>
 
 </html>
