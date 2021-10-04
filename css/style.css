@@ -2310,6 +2310,74 @@ h3,
   color: #21146a;
 }
 
+/* login content */
+@import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+
+.grad{
+	position: relative;
+	width: 100%;
+	height: 600px;
+  background-image: url(../img/Jenis-Kantor-Peningkat-Produktivitas-01.png);
+  background-size: cover;
+}
+
+.head{
+	position: absolute;
+	top: calc(50% - 35px);
+	left: calc(40% - 255px);
+	z-index: 2;
+}
+
+.head div{
+	float: left;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 35px;
+	font-weight: 200;
+}
+
+.head div span{
+	color: #5379fa !important;
+}
+
+.login{
+	position: absolute;
+	top: calc(50% - 75px);
+	left: calc(40% - 50px);
+	height: 150px;
+	width: 350px;
+	padding: 10px;
+	z-index: 2;
+}
+
+.login input[type=button]{
+	width: 260px;
+	height: 35px;
+	background: #fff;
+	border: 1px solid #fff;
+	cursor: pointer;
+	border-radius: 2px;
+	color: #a18d6c;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 10px;
+}
+
+.login input[type=button]:hover{
+	opacity: 0.8;
+}
+
+.login input[type=button]:active{
+	opacity: 0.6;
+}
+
+.login input[type=button]:focus{
+	outline: none;
+}
+
 /* footer */
 .footer-area {
   background-color:#26272b;
