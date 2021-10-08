@@ -225,20 +225,10 @@ error_reporting(0);
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="header-wrap">
-                        <form class="form-header" action="prospenab.php" method="POST">
-                                <input class="au-input au-input--xl" autocomplete="off" type="text" name="cari" placeholder="Cari ID atau nama karyawan" value="<?php if(isset($_POST['cari'])) echo $_POST['cari'];?>" />
-                                <button class="au-btn--submit" type="submit">
-                                    <i class="zmdi zmdi-search"></i>
-                                </button> </form>
-
-                                <form class="form-header" action="prospendaab.php" method="POST">
-                                <input class="au-input au-input--l" autocomplete="off" type="date" name="cari2" placeholder="Cari " value="<?php if(isset($_POST['cari2'])) echo $_POST['cari2'];?>"/>
-                                <button class="au-btn--submit" type="submit">
-                                    <i class="zmdi zmdi-search"></i>
-                                </button> </form>
-
-                                <form class="form-header" action="prospenmaab.php" method="POST">
-                                <input class="au-input au-input--l" autocomplete="off" type="text" name="cari_bulan" placeholder="cari bulan" value="<?php if(isset($_POST['cari_bulan'])) echo $_POST['cari_bulan'];?>"/>
+                        <form class="form-header" action="prospendaab.php" method="POST">
+                                <input autocomplete="off" class="au-input au-input--xl" type="text" name="cari" placeholder="Cari ID atau nama karyawan"  value="<?php if(isset($_POST['cari'])) echo $_POST['cari'];?>"/>
+                                <input class="au-input au-input--l" autocomplete="off" type="date" name="cari_waktu" placeholder="cari waktu" value="<?php if(isset($_POST['cari_waktu'])) echo $_POST['cari_waktu'];?>"/>
+                                <input class="au-input au-input--l" autocomplete="off" type="text" name="cari_bulan" placeholder="cari bulan" value="<?php if(isset($_POST['cari_bulan'])) echo $_POST['cari_bulan']; // echo $_POST['cari']; echo $_POST['cari_waktu'];?>"/>
                                 <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
                                 </button> </form>
@@ -303,9 +293,12 @@ error_reporting(0);
                                          ?>
                                         <tbody>
                                         <?php 
-                                            $cari2 = $_POST['cari2'];
-                                            $sql = "SELECT * FROM tb_absen WHERE cari_waktu LIKE '%$cari2%'";
-                                            $query = mysqli_query($koneksi, $sql);
+                                             $cari = $_POST['cari'];
+                                             $cari2 = $_POST['cari2'];
+                                             $cari_bulan = $_POST['cari_bulan'];
+                                             // $sql = "SELECT * FROM tb_keterangan WHERE cari_waktu LIKE '%$cari2%'";
+                                             $sql = "SELECT * FROM tb_absen WHERE id_karyawan LIKE '%$cari%' OR nama LIKE '%$cari%' AND  cari_waktu LIKE '%$cari_bulan%' AND  cari_waktu LIKE '%$cari2%'";
+                                             $query = mysqli_query($koneksi, $sql);
 
                                             $no = 1;
 

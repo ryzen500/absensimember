@@ -198,7 +198,8 @@ error_reporting(0);
                                         
                                         <tbody>
                                               <tr>
-                                                  <td><input type="text" readonly="" name="id"></td>
+                                                  <td></td>
+                                                  <td><input type="text"  readonly="" name="id"></td>
                                               </tr>
                                             <tr>
                                                 <td>NIP</td>

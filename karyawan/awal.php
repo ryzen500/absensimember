@@ -233,7 +233,6 @@ error_reporting(0);
                                             <tr>
                                                 <td><button type="submit" name="simpan" class="btn btn-primary">Absen</button></td>
                                                 <td>
-                                               <a href="?m=karyawan&s=title"><button class="btn btn-warning">Klik Tombol ini jika tidak hadir / absen</button></a>
                                             </td>
                                             </tr>
                                             
@@ -241,7 +240,8 @@ error_reporting(0);
                                     </table>
                                         </div>
                             </form>
-                                    
+                            <a href="?m=karyawan&s=title" style="transform: translate(180%,-180%);"><button class="btn btn-warning">Klik Tombol ini jika tidak hadir / absen</button></a>
+
                                 </div>    
                         </div>
                         <!-- END FORM -->
