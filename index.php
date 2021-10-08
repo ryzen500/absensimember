@@ -1,32 +1,30 @@
-  <?php
+<?php
 session_start();
 include ("koneksi.php");
 
  ?>
 
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Sistem Informasi Karyawan - Home</title>
-	<link rel="icon" href="img/Fevicon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Informasi Karyawan - Home</title>
 
-  <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
-  <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="vendors/themify-icons/themify-icons.css">
-  <link rel="stylesheet" href="vendors/linericon/style.css">
-  <link rel="stylesheet" href="vendors/owl-carousel/owl.theme.default.min.css">
-  <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="icon" href="img/Fevicon.png" type="image/png">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="vendors/themify-icons/themify-icons.css">
+<link rel="stylesheet" href="vendors/linericon/style.css">
+<link rel="stylesheet" href="vendors/owl-carousel/owl.theme.default.min.css">
+<link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/style.css">
 
-  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!--================Header Menu Area =================-->
+      <!--================Header Menu Area =================-->
   <header class="header_area">
     <div class="main_menu">
       <nav class="navbar navbar-expand-lg navbar-light">
@@ -42,23 +40,17 @@ include ("koneksi.php");
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav justify-content-end">
               <li class="nav-item active"><a class="nav-link" >Home</a></li> 
-              <li class="nav-item"><a class="nav-link" href="#login" rel="page-scroll">Login</a></li> 
-           
-              
-							</li>
+              <li class="nav-item"><a class="nav-link" href="#login" rel="page-scroll">Login</a></li>
               <li class="nav-item"><a class="nav-link" href="#kontak" rel="page-scroll">Kontak</a></li>
             </ul>
-
-            
           </div> 
         </div>
       </nav>
     </div>
   </header>
-  <!--================Header Menu Area =================-->
+   <!--================Header Menu Area =================-->
 
-
-  <main class="side-main">
+   <main class="side-main">
     <!--================ Hero sm Banner start =================-->      
     <section class="hero-banner mb-30px">
       <div class="container">
@@ -78,81 +70,52 @@ include ("koneksi.php");
       </div>
     </section>
     <!--================ Hero sm Banner end =================-->
-
-    <!--================ Feature section start =================-->      
-    <section class="section-margin">
-      <div class="container">
-        <div class="section-intro pb-85px text-center" id="kontak">
-          <h2 class="section-intro__title">Kontak</h2>
-          <p class="section-intro__subtitle"></p>
-        </div>
-
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-4">
-              <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
-                <span class="card-feature__icon">
-                 
-                </span>
-                <h3 class="card-feature__title">Facebook</h3>
-                <p class="card-feature__subtitle">Icon Facebook</p>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
-                <span class="card-feature__icon">
-                  
-                </span>
-                <h3 class="card-feature__title">Whatsapp</h3>
-                <p class="card-feature__subtitle">Gambar Icon Wa</p>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="card card-feature text-center text-lg-left mb-4 mb-lg-0">
-                <span class="card-feature__icon">
-                
-                </span>
-                <h3 class="card-feature__title">LinkedIn</h3>
-                <p class="card-feature__subtitle"></p>
-              </div>
-            </div>
-          </div>
-        </div>
+    <!-- <div class="case" id="kasus">
+        <ul class="widget text-dark">
+          <li class="positif">
+            <span class="tag">Jumlah Positif</span>
+            <span class="value">-</span>
+            <span class="orang">Orang</span>
+          </li>
+          <li class="sembuh">
+            <span class="tag">Jumlah Sembuh</span>
+            <span class="value">-</span>
+            <span class="orang">Orang</span>
+          </li>
+          <li class="meninggal">
+            <span class="tag">Jumlah Meninggal</span>
+            <span class="value">-</span>
+            <span class="orang">Orang</span>
+          </li>
+          <li class="dirawat">
+            <span class="tag">Jumlah Dirawat</span>
+            <span class="value">-</span>
+            <span class="orang">Orang</span>
+          </li>
+        </ul>
       </div>
-    </section>
-    <!--================ Feature section end =================-->      
+    </div> -->
+</main>
 
     <!-- Login Feature Section Start -->
 
-    <section class="section-margin">
-      
-        <div class="row content" id="login">
-      <div class="col-lg-12 danger text-center zero-panel">
-        <div class="col-lg-12 zero-panel-content">
-          <h1> LOGIN SEBAGAI .... </h1>
-        
-        </div>
-        <br>
-        <ul class="list-inline" id="chart-skill">
-          <li><a href="login.php" target="_blank"><button class="btn btn-warning" style="size: 50px;">Login Admin</button></a>
-          </li><br>
-          <li><a href="karyawan/login_karyawan.php" target="_blank"><button class="btn btn-primary" style="size: 50px;">Login Karyawan</button></a>
-          </li>
-          
-        </ul>
-      </div>
-    </div>
+    <section class="side-main">
+		<div class="grad">
+		<div class="head">
+			<div>Login<span>Sebagai</span></div>
+		</div>
+		<br>
+		<div class="login">
+        <a href="login.php"><input type="button" value="ADMIN"></a>
+        <a href="karyawan/login_karyawan.php"><input type="button" value="PEGAWAI"></a>
+		</div>
+</div>
     </section>
 
 
     <!-- Login Feature Section End -->
     
-
-    <!--================ about section start =================-->      
-   
-
-
- <!-- ================ start footer Area ================= -->
+   <!-- ================ start footer Area ================= -->
  <footer class="footer-area ">
         <div class="container">
           <div class="row">
@@ -206,12 +169,5 @@ include ("koneksi.php");
         </div>
   </footer>
   <!-- ================ End footer Area ================= -->
-
-  <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
-  <script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
-  <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
-  <script src="js/jquery.ajaxchimp.min.js"></script>
-  <script src="js/mail-script.js"></script>
-  <script src="js/main.js"></script>
 </body>
 </html>
