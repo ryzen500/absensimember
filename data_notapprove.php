@@ -160,7 +160,7 @@ session_start();
                             <a href="data_keterangan.php"><i class="fas fa-table"></i>Data Keterangan</a>
                         </li>
                         <li>
-                            <a href="data_notapprove.php">
+                            <a href="#">
                                 <i class="fas fa-table"></i>Not Approve
                             </a>
                         </li>
@@ -298,8 +298,9 @@ session_start();
                                  <th class="text-right">alasan</th>
                                  <th class="text-right">waktu</th>
                                  <th>bukti</th>
-                               
-                                <th>Aksi</th>
+                
+                                <th style="text-transform: none; text-align: end;">Aksi</th>
+                                <th></th>
                                                 
                                             </tr>
                                         </thead>
@@ -315,7 +316,7 @@ session_start();
                                            
                                            <?php 
                                            $no++;
-                                            include 'paging_ket.php';
+                                            include 'paging_ket_notapprove.php';
 
                                             ?>
                                         </tbody>

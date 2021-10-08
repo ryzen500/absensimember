@@ -15,7 +15,7 @@ $data = mysqli_query($koneksi, "SELECT * FROM tb_keterangan");
 $jumlah_data = mysqli_num_rows($data);
 $total_halaman = ceil($jumlah_data / $batas);
 
-$data_karyawan = mysqli_query($koneksi, "SELECT * FROM tb_keterangan WHERE status=1 LIMIT $halaman_awal, $batas");
+$data_karyawan = mysqli_query($koneksi, "SELECT * FROM tb_keterangan WHERE status=0 LIMIT $halaman_awal, $batas");
 $nomor = $halaman_awal+1;
 
 
@@ -47,6 +47,7 @@ while ($row=mysqli_fetch_array($data_karyawan)) {
                                                     
 
                                                 </td>
+                                                <td><a href="absen/edit_keterangan.php?id=<?php echo $row['id']; ?>"><button class="btn btn-primary" onclick="return confirm('Yakin ingin mengapprove data ?');">Approval</button></a></td>
                                                 <td><a href="absen/hapus_keterangan.php?id=<?php echo $row['id']; ?>"><button class="btn btn-danger" onclick="return confirm('yakin ingin dihapus?');">Hapus</button></a></td>
 
 

@@ -31,7 +31,7 @@ if (move_uploaded_file($tmp, $path)) {
 
 
 
-$query = "INSERT INTO tb_keterangan SET id_karyawan = '$id_karyawan', nama='$nama', keterangan='$keterangan', alasan='$alasan', waktu='$waktu', cari_waktu='$cari_waktu', bulan='$bulan', tahun='$tahun', bukti='$buktibaru'";
+$query = "INSERT INTO tb_keterangan SET id_karyawan = '$id_karyawan', nama='$nama', keterangan='$keterangan', alasan='$alasan', waktu='$waktu', cari_waktu='$cari_waktu', bulan='$bulan', tahun='$tahun', bukti='$buktibaru' status=0";
 mysqli_query($koneksi, $query);
 
 if ($query) {
