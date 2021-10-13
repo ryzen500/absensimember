@@ -300,6 +300,7 @@ session_start();
                                  <th>bukti</th>
                                
                                 <th>Aksi</th>
+                                <th>Status</th>
                                                 
                                             </tr>
                                         </thead>

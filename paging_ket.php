@@ -33,7 +33,6 @@ while ($row=mysqli_fetch_array($data_karyawan)) {
                                                 <td><?php echo $row['keterangan']; ?></td>
                                                 <td><?php echo $row['alasan']; ?></td>
                                                 <td><?php echo $row['waktu']; ?></td>
-                                               
                                                 <td>
                                                     <?php 
 
@@ -47,6 +46,15 @@ while ($row=mysqli_fetch_array($data_karyawan)) {
                                                     
 
                                                 </td>
+                                                <!-- Status  -->
+                                                <?php if ($row['status'] == 1) {
+                                                    # code...
+                                                    echo "<td>Approved</td>";
+                                                }else {
+                                                    # code...
+                                                    echo "<td>unapproved</td>";
+                                                } ?>
+
                                                 <td><a href="absen/hapus_keterangan.php?id=<?php echo $row['id']; ?>"><button class="btn btn-danger" onclick="return confirm('yakin ingin dihapus?');">Hapus</button></a></td>
 
 
